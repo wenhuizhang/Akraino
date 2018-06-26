@@ -6,7 +6,7 @@ A summary of security tools applicable to Akraino Stack.
 
 ### 1. Password Complexity Check: 
 
-1.1 John The Ripper - A fast password cracker http://www.openwall.com/john/
+1.1 John The Ripper: A fast password cracker http://www.openwall.com/john/
 
 1.2 atstaketools: This is an archive of various tools that help perform vulnerability scanning and analysis, information gathering, password auditing, and forensics.http://packetstormsecurity.com/files/50718/AtStakeTools.zip.html
 
@@ -76,7 +76,7 @@ http://www.question-defense.com/2013/01/11/ocs-version-2-release-ocs-cisco-route
 
 ### 6. Debuggers and Disassemblers
 
-6.1 GDB - Gnu Debugger: The favorite linux debugger. http://www.sourceware.org/gdb/
+6.1 GDB: The favorite linux debugger. http://www.sourceware.org/gdb/
 
 6.2 Radare2: Framework for reverse-engineering and analyzing binaries. http://www.radare.org/r/
 
@@ -86,40 +86,40 @@ http://www.question-defense.com/2013/01/11/ocs-version-2-release-ocs-cisco-route
 
 ### 7. Pentesting
 
-7.1 OpenVAS - OpenVAS is a framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. http://www.openvas.org/
+7.1 OpenVAS: OpenVAS is a framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. http://www.openvas.org/
 
-7.2 Metasploit Framework - A tool for developing and executing exploit code against a remote target machine. Other important sub-projects include the Opcode Database, shellcode archive and related research. https://github.com/rapid7/metasploit-framework
+7.2 Metasploit Framework: A tool for developing and executing exploit code against a remote target machine. Other important sub-projects include the Opcode Database, shellcode archive and related research. https://github.com/rapid7/metasploit-framework
 
-7.3 Kali - Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing. Kali Linux is preinstalled with numerous penetration-testing programs, including nmap (a port scanner), Wireshark (a packet analyzer), John the Ripper (a password cracker), and Aircrack-ng (a software suite for penetration-testing wireless LANs). https://www.kali.org/
+7.3 Kali: Kali Linux is a Debian-derived Linux distribution designed for digital forensics and penetration testing. Kali Linux is preinstalled with numerous penetration-testing programs, including nmap (a port scanner), Wireshark (a packet analyzer), John the Ripper (a password cracker), and Aircrack-ng (a software suite for penetration-testing wireless LANs). https://www.kali.org/
 
-7.4 pig - A Linux packet crafting tool. https://github.com/rafael-santiago/pig
+7.4 pig: A Linux packet crafting tool. https://github.com/rafael-santiago/pig
 
 
 
 ### 8. Scanning Network:
 
-8.1 Nmap - Nmap is a free and open source utility for network discovery and security auditing. https://nmap.org/
+8.1 Nmap: Nmap is a free and open source utility for network discovery and security auditing. https://nmap.org/
 
-8.2 Amass - Amass performs DNS subdomain enumeration by scraping the largest number of disparate data sources, recursive brute forcing, crawling of web archives, permuting and altering names, reverse DNS sweeping and other techniques. https://github.com/caffix/amass
+8.2 Amass: Amass performs DNS subdomain enumeration by scraping the largest number of disparate data sources, recursive brute forcing, crawling of web archives, permuting and altering names, reverse DNS sweeping and other techniques. https://github.com/caffix/amass
 
-8.3 justniffer - Justniffer is a network protocol analyzer that captures network traffic and produces logs in a customized way, can emulate Apache web server log files, track response times and extract all "intercepted" files from the HTTP traffic. http://justniffer.sourceforge.net/
+8.3 justniffer: Justniffer is a network protocol analyzer that captures network traffic and produces logs in a customized way, can emulate Apache web server log files, track response times and extract all "intercepted" files from the HTTP traffic. http://justniffer.sourceforge.net/
 
-8.4 httpry - httpry is a specialized packet sniffer designed for displaying and logging HTTP traffic. http://dumpsterventures.com/jason/httpry/
+8.4 httpry: httpry is a specialized packet sniffer designed for displaying and logging HTTP traffic. http://dumpsterventures.com/jason/httpry/
 
-8.5 ntopng - Ntopng is a network traffic probe that shows the network usage, similar to what the popular top Unix command does. http://www.ntop.org/products/traffic-analysis/ntop/
+8.5 ntopng: Ntopng is a network traffic probe that shows the network usage, similar to what the popular top Unix command does. http://www.ntop.org/products/traffic-analysis/ntop/
 
-8.6 Snort - Snort is a free and open source network intrusion prevention system (NIPS) and network intrusion detection system (NIDS)created by Martin Roesch in 1998. Snort is now developed by Sourcefire, of which Roesch is the founder and CTO. In 2009, Snort entered InfoWorld's Open Source Hall of Fame as one of the "greatest [pieces of] open source software of all time". https://www.snort.org/
+8.6 Snort: Snort is a free and open source network intrusion prevention system (NIPS) and network intrusion detection system (NIDS)created by Martin Roesch in 1998. Snort is now developed by Sourcefire, of which Roesch is the founder and CTO. In 2009, Snort entered InfoWorld's Open Source Hall of Fame as one of the "greatest [pieces of] open source software of all time". https://www.snort.org/
 
-8.7 Bro - Bro is a powerful network analysis framework that is much different from the typical IDS you may know. https://www.bro.org/
+8.7 Bro: Bro is a powerful network analysis framework that is much different from the typical IDS you may know. https://www.bro.org/
 
-8.8 Suricata - Suricata is a high performance Network IDS, IPS and Network Security Monitoring engine. Open Source and owned by a community run non-profit foundation, the Open Information Security Foundation (OISF). Suricata is developed by the OISF and its supporting vendors. http://suricata-ids.org/
+8.8 Suricata: Suricata is a high performance Network IDS, IPS and Network Security Monitoring engine. Open Source and owned by a community run non-profit foundation, the Open Information Security Foundation (OISF). Suricata is developed by the OISF and its supporting vendors. http://suricata-ids.org/
 
 
 ### 9. Scanning Host:
 
-9.1 scapy - Scapy: the python-based interactive packet manipulation program & library. https://github.com/secdev/scapy
+9.1 scapy: Scapy: the python-based interactive packet manipulation program & library. https://github.com/secdev/scapy
 
-9.2 Pompem - Pompem is an open source tool, which is designed to automate the search for exploits in major databases. Developed in Python, has a system of advanced search, thus facilitating the work of pentesters and ethical hackers. In its current version, performs searches in databases: Exploit-db. https://github.com/rfunix/Pompem
+9.2 Pompem: Pompem is an open source tool, which is designed to automate the search for exploits in major databases. Developed in Python, has a system of advanced search, thus facilitating the work of pentesters and ethical hackers. In its current version, performs searches in databases: Exploit-db. https://github.com/rfunix/Pompem
 
 
 
