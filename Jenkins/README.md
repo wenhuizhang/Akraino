@@ -6,3 +6,5 @@ It gives out possibilities of shipping whole software stack (bootloader, OS, hyp
 P.S. 
 Bare metal here means we only have BIOS on top of hardwares. 
 
+
+On the localhost:8080 as default(or whatever server and port you are working on), go to `Manage Jenkins` and then choose `Configure System ` and `Configure global security` for security access control settings. 
