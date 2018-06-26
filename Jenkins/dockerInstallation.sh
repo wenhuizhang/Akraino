@@ -1,3 +1,6 @@
+set -x
+
+
 docker --version
 
 docker images
