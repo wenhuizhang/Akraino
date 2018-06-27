@@ -2,7 +2,7 @@
 
 test for access control across different projects
 
-Test result, it is a id based DAC, no MAC is enforced
+test result, it is a id based DAC, no MAC is enforced
 
 ```
 #!/bin/bash
@@ -18,6 +18,8 @@ for i in {1..30}; do
   cd ..
   echo $?
   cd ./2
+  echo $?
+  cp 1.txt ../1/
   echo $?
 done
 exit 0
