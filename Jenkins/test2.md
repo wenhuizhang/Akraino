@@ -2,6 +2,8 @@
 
 test for access control across different projects
 
+Test result, it is a id based DAC, no MAC is enforced
+
 ```
 #!/bin/bash
 set -x
