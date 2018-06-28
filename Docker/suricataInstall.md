@@ -39,5 +39,30 @@ The binary of suricata is located at `/usr/bin/suricata`.
 
 Configuration file of IDS is located at ` /etc/suricata/suricata.yaml`. 
 
+Disable eth's gro
+
+```
+$ sudo ethtool -K eth0 gro off lro off
+```
+
+Check modes available
+
+```
+$ sudo /usr/local/bin/suricata --list-runmodes
+```
+
+Execute
+
+```
+$ sudo /usr/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
+```
+
+6. Check log files 
+
+```
+$ tail -f /var/log/suricata/fast.log
+
+$ tail -f /var/log/suricata/eve.json
+```
 
 
