@@ -305,6 +305,8 @@ Again, it will take quite a while, relax and get a cup of coffee/tea :-P
 If you see something as below, you are good to go.
 
 ```
+...
+
 Setting up tempest repository
 Setting up yaml builds repository
 Setting up ONAP repository
