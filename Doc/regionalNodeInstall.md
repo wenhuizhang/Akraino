@@ -64,8 +64,9 @@ Node 44 is a Linux Server with Container.
 
 Check what OS is on Linux Server, a `Ubuntu 16.04.1` is required.
 ```
-$ uname -a
-Linux csonjrsv44 4.13.0-45-generic #50~16.04.1-Ubuntu SMP Wed May 30 11:18:27 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+$ uname -rsv
+Linux 4.13.0-45-generic #50~16.04.1-Ubuntu SMP Wed May 30 11:18:27 UTC 2018
+
 ```
 
 ### 1.2 Check Docker version on Linux Server
