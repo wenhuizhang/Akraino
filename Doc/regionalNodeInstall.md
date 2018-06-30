@@ -310,6 +310,6 @@ Setting up ONAP repository
 Setting up sample vnf repository
 SUCCESS:  Portal install completed
 ```
-```
+
 
 
