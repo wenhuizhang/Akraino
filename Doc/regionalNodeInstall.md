@@ -204,7 +204,7 @@ BUILD_WEBIP=192.168.2.5
 BUILD_WEBPORT=8090
 
 # host name for server
-SRV_NAME=aknode44
+SRV_NAME=aknode42
 
 # server oem - Dell or HPE (case sensitive)
 SRV_OEM=Dell
@@ -278,13 +278,13 @@ If you see something as below, you are good to go.
 $ /opt/akraino/tools/install_server_os.sh --rc /opt/akraino/server-config/aknode42rc --no-confirm
 Beginning /opt/akraino/tools/install_server_os.sh as user [root] in pwd [/opt/akraino] with home [/root]
 Tools are ready in [/opt/akraino]
-WARNING:  Preparing to build server [aknode44] using oob ip [192.168.41.42].  Beginning in 10 seconds ..........
+WARNING:  Preparing to build server [aknode42] using oob ip [192.168.41.42].  Beginning in 10 seconds ..........
 Beginning bare metal install of os at Fri Jun 29 23:12:26 UTC 2018
 
 ...
 
-SUCCESS:  Completed bare metal install of regional server [aknode41] at Fri Jun 29 02:05:00 EDT 2018
-SUCCESS:  Try connecting with 'ssh root@192.168.2.41' as user root
+SUCCESS:  Completed bare metal install of regional server [aknode42] at ...
+SUCCESS:  Try connecting with 'ssh root@192.168.2.42' as user root
 Elapsed time was 10 minutes and 31 seconds
 ```
 
