@@ -2,27 +2,31 @@
 
 This guide helps you build and install Regional Node of Akraino Stack.
 
-There are 9 components involved in this installation of regional node. 
+There are 11 components involved in this installation of regional node. 
 
-1) Redfish OS
+1) Redfish iDRAC Bootstrapping 
 
 2) Camunda Workflow and Decision Engine
 
-3) PostgressDB
+3) Linux OS Installation 
 
-4) LDAP configuration
+4) OpenStack-Ocata
+
+5) PostgreSQL DB
+
+6) LDAP configuration
 
 It also downloads portal files:
 
-5) Tempest 
+7) Tempest 
 
-6) Yaml builds 
+8) Yaml builds 
 
-7) ONAP
+9) ONAP
 
-8) Sample VNFs 
+10) Sample VNFs 
 
-9) Airship in a bottle tar file
+11) Airship in a bottle tar file
 
 
 This installation will walk you through the steps of installation of a `Bare metal server` through `Build server`.
