@@ -2,7 +2,27 @@
 
 This guide helps you build and install Regional Node of Akraino Stack.
 
-There are 11 components involved in this installation of regional node. 
+There are 3 main steps involved in this installation of regional node: (1) OS install; (2) portal install; (3) preparation of installation files for Edge Node building steps of Akraino Stack. 
+
+OS Install
+•	Redfish iDRAC Bootstrapping  - Performs hardware configuration
+•	Linux OS Installation - Installs Ubuntu
+
+Portal Install
+•	PostgreSQL DB
+•	Camunda Workflow and Decision Engine
+•	Akraino Web Portal
+•	LDAP configuration - Not sure that  we use ldap... I didn’t see a docker container for it.  Narender or the portal team would need to clarify.
+
+These components are staged on the Regional controller so they are available once a site is built:
+•	Tempest 
+•	Yaml builds 
+•	ONAP
+•	Sample VNFs
+
+
+
+There are 3 parts of components involved in this installation of regional node. 
 
 1) Redfish iDRAC Bootstrapping 
 
