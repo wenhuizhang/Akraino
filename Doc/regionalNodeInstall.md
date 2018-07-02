@@ -171,7 +171,7 @@ $ source /opt/akraino/.akrainorc
 
 ### 3.1 Setup repository of Akraino tools
 
-Clone the Redfish OS as part of Akraino tools. 
+Clone the Redfish Bootstrapping Scripts as part of Akraino tools. 
 
 ```
 $ git clone http://gerrit.att-akraino.org/redfish.git /opt/akraino/tools
