@@ -1,0 +1,1485 @@
+root@csonjrsv44:/opt/akraino# /opt/akraino/tools/install_server_os.sh --rc /opt/akraino/server-config/aknode42rc --no-confirm
+Beginning /opt/akraino/tools/install_server_os.sh as user [root] in pwd [/opt/akraino] with home [/root]
+Tools are ready in [/opt/akraino]
+WARNING:  Preparing to build server [aknode44] using oob ip [192.168.41.42].  Beginning in 10 seconds ..........
+Beginning bare metal install of os at Mon Jul 2 19:52:29 UTC 2018
+Found build web ip address [192.168.2.44] on this server!
+bond0.41  Link encap:Ethernet  HWaddr 3c:fd:fe:b8:10:60
+          inet addr:192.168.2.44  Bcast:192.168.2.255  Mask:255.255.255.0
+Tools are ready in [/opt/akraino]
+Tools are ready in [/opt/akraino]
+Checking iso []
+WARNING:  ISO file [] appears to be missing or corrupt.  Downloading instead.
+    xorriso 1.4.2 : RockRidge filesystem manipulator, libburnia project.
+
+    Drive current: -indev '--check-media'
+    Media current: stdio file, overwriteable
+    Media status : is blank
+    Media summary: 0 sessions, 0 data blocks, 0 data,  402g free
+WARNING:  Attempting to us [ubuntu-16.04.4-server-amd64.iso] instead.
+Ubuntu iso [ubuntu-16.04.4-server-amd64.iso] already exists in [/opt/akraino/www]
+Updating web root folder [/opt/akraino/www] with ubuntu iso [/opt/akraino/www/ubuntu-16.04.4-server-amd64.iso] contents
+Found ubuntu version [ISO_VERSION] arch [amd64]
+Extracting files to [/opt/akraino/www]
+    xorriso 1.4.2 : RockRidge filesystem manipulator, libburnia project.
+
+    Copying of file objects from ISO image to disk filesystem is: Enabled
+    xorriso : NOTE : Loading ISO image tree from LBA 0
+    xorriso : UPDATE : 2955 nodes read in 1 seconds
+    xorriso : NOTE : Detected El-Torito boot information which currently is set to be discarded
+    Drive current: -indev '/opt/akraino/www/ubuntu-16.04.4-server-amd64.iso'
+    Media current: stdio file, overwriteable
+    Media status : is written , is appendable
+    Boot record  : El Torito , MBR isohybrid cyl-align-on GPT APM
+    Media summary: 1 session, 434176 data blocks,  848m data,  402g free
+    Volume id    : 'Ubuntu-Server 16.04.4 LTS amd64'
+    xorriso : UPDATE : 2058 files restored ( 855.8m) in 1 seconds = 647.9xD
+    Extracted from ISO image: file '/'='/opt/akraino/www/ubuntu-16.04.4-amd64'
+Files for Ubuntu version [16.04.4] [amd64] are ready in folder [/opt/akraino/www]
+Use script-hwe-16.04.4-amd64.ipxe or script-16.04.4-amd64.ipxe in the dhcp config depending on the kernel version required.
+Creating ixpe.efi for web root in folder [/opt/akraino/www] using interface [net4] and vlan [41]
+Skipping ipxe build because efi file [/opt/akraino/www/ipxe-net4-41.efi] already exists
+Adding firstboot script [aknode44.firstboot.sh] to web root [/opt/akraino/www]
+Creating seed file [/opt/akraino/www/aknode44.seed] for server [aknode44]
+Starting web server using folder [/opt/akraino/www] on port [8090]
+Updating dhcp configuration [/opt/akraino/dhcp/dhcpd.conf] with subnet [192.168.2.0]
+Updating dhcp configuration [/opt/akraino/dhcp/dhcpd.conf] with server [aknode44]
+Starting dhcp server using folder [/opt/akraino/dhcp] on interface []
+Tools are ready in [/opt/akraino]
+Using template [/opt/akraino/tools/dell_r740_g14_uefi_base.xml.template]
+WARNING:  Preparing to apply xml to server [aknode44] using oob ip [192.168.41.42].  Beginning in 10 seconds ..........
+Beginning create and apply xlm file to server at Mon Jul 2 19:52:54 UTC 2018
+Creating server BIOS/RAID settings file [/opt/akraino/server-config/aknode44.dell_r740_g14_uefi_base.xml] for server [aknode44]
+Applying server settings file [/opt/akraino/server-config/aknode44.dell_r740_g14_uefi_base.xml] to [192.168.41.42]
+This step could take up to 10 minutes
+
+- JID_305612194006 successfully created for ImportSystemConfiguration method
+
+- Job not marked completed, current status is: Running
+- Message: Importing Server Configuration Profile.
+
+- Job not marked completed, current status is: Running
+- Message: Applying configuration changes.
+
+- Job not marked completed, current status is: Running
+- Message: Applying configuration changes.
+
+- Job not marked completed, current status is: Running
+- Message: Applying configuration changes.
+
+- Job not marked completed, current status is: Running
+- Message: Applying configuration changes.
+
+- Job not marked completed, current status is: Running
+- Message: Applying configuration changes.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+- Job not marked completed, current status is: Running
+- Message: Updating component configuration.
+
+
+- FAIL, detailed job message is: [{u'Message': u'Staged component configuration completed with errors.', u'MessageId': u'SYS033', u'MessageArgs': [], u'MessageArgs@odata.count': 0}]
+SUCCESS:  Completed update of BIOS/RAID settings on [aknode44] at Mon Jul 2 19:59:43 UTC 2018
+Elapsed time was 6 minutes and 49 seconds
+Completed update with status [0]
+Tools are ready in [/opt/akraino]
+Using template [/opt/akraino/tools/dell_r740_g14_uefi_httpboot.xml.template]
+WARNING:  Preparing to apply xml to server [aknode44] using oob ip [192.168.41.42].  Beginning in 10 seconds ..........
+Beginning create and apply xlm file to server at Mon Jul 2 20:00:13 UTC 2018
+Creating server BIOS/RAID settings file [/opt/akraino/server-config/aknode44.dell_r740_g14_uefi_httpboot.xml] for server [aknode44]
+Applying server settings file [/opt/akraino/server-config/aknode44.dell_r740_g14_uefi_httpboot.xml] to [192.168.41.42]
+This step could take up to 10 minutes
+
+- FAIL: detailed error message: {"error":{"@Message.ExtendedInfo":[{"Message":"Unable to create a configuration job because an existing configuration job is already in progress.","MessageArgs":[],"MessageArgs@odata.count":0,"MessageId":"iDRAC.1.6.RAC052","RelatedProperties":[],"RelatedProperties@odata.count":0,"Resolution":"Retry the operation after the existing configuration job is complete, or cancel the existing configuration job and retry the operation.","Severity":"Warning"}],"code":"Base.1.0.GeneralError","message":"A general error has occurred. See ExtendedInfo for more information"}}
+
+SUCCESS:  Completed update of BIOS/RAID settings on [aknode44] at Mon Jul 2 20:00:14 UTC 2018
+Elapsed time was 0 minutes and 1 seconds
+Completed update with status [0]
+Waiting for server [192.168.2.42] to download [aknode44.firstboot.sh] from web container at Mon Jul 2 20:00:34 UTC 2018
+This step could take up to 15 minutes
+192.168.2.42 - - [02/Jul/2018:20:00:46 +0000] "HEAD /ipxe-net4-41.efi HTTP/1.1" 200 -
+192.168.2.42 - - [02/Jul/2018:20:00:46 +0000] "GET /ipxe-net4-41.efi HTTP/1.1" 200 947616
+192.168.2.42 - - [02/Jul/2018:20:00:50 +0000] "GET /script-hwe-16.04.4-amd64.ipxe HTTP/1.1" 200 1602
+192.168.2.42 - - [02/Jul/2018:20:01:05 +0000] "GET /linux-hwe-16.04.4-amd64 HTTP/1.1" 200 7712824
+192.168.2.42 - - [02/Jul/2018:20:01:05 +0000] "GET /initrd-hwe-16.04.4-amd64 HTTP/1.1" 200 108417536
+192.168.2.42 - - [02/Jul/2018:20:01:42 +0000] "GET /aknode44.seed HTTP/1.1" 200 7454
+192.168.2.42 - - [02/Jul/2018:20:01:45 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/Release HTTP/1.1" 200 4613
+192.168.2.42 - - [02/Jul/2018:20:01:45 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/main/binary-amd64/Release HTTP/1.1" 200 96
+192.168.2.42 - - [02/Jul/2018:20:01:45 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/Release HTTP/1.1" 200 4613
+192.168.2.42 - - [02/Jul/2018:20:01:45 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/Release.gpg HTTP/1.1" 200 819
+192.168.2.42 - - [02/Jul/2018:20:01:45 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/main/debian-installer/binary-amd64/Packages.gz HTTP/1.1" 200 55114
+192.168.2.42 - - [02/Jul/2018:20:01:45 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/restricted/debian-installer/binary-amd64/Packages.gz HTTP/1.1" 200 40
+192.168.2.42 - - [02/Jul/2018:20:01:45 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/Release HTTP/1.1" 404 247
+192.168.2.42 - - [02/Jul/2018:20:01:47 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apt-setup/apt-mirror-setup_0.104ubuntu4.1_all.udeb HTTP/1.1" 200 253932
+192.168.2.42 - - [02/Jul/2018:20:01:47 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apt-setup/apt-setup-udeb_0.104ubuntu4.1_amd64.udeb HTTP/1.1" 200 46198
+192.168.2.42 - - [02/Jul/2018:20:01:47 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/attr/attr-udeb_2.4.47-2_amd64.udeb HTTP/1.1" 200 13998
+192.168.2.42 - - [02/Jul/2018:20:01:47 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/base-installer/base-installer_1.158ubuntu2.1_amd64.udeb HTTP/1.1" 200 142680
+192.168.2.42 - - [02/Jul/2018:20:01:47 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/block-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 385638
+192.168.2.42 - - [02/Jul/2018:20:01:47 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/btrfs-tools/btrfs-tools-udeb_4.4-1ubuntu1_amd64.udeb HTTP/1.1" 200 244498
+192.168.2.42 - - [02/Jul/2018:20:01:47 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/clock-setup/clock-setup_0.126ubuntu1_amd64.udeb HTTP/1.1" 200 63432
+192.168.2.42 - - [02/Jul/2018:20:01:48 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cryptsetup/cryptsetup-udeb_1.6.6-5ubuntu2.1_amd64.udeb HTTP/1.1" 200 36488
+192.168.2.42 - - [02/Jul/2018:20:01:48 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/debian-installer-utils/di-utils-mapdevfs_1.113ubuntu1.16.04.1_amd64.udeb HTTP/1.1" 200 2434
+192.168.2.42 - - [02/Jul/2018:20:01:48 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/hw-detect/disk-detect_1.117ubuntu2.3_amd64.udeb HTTP/1.1" 200 30974
+192.168.2.42 - - [02/Jul/2018:20:01:48 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/dmsetup-udeb_1.02.110-1ubuntu10_amd64.udeb HTTP/1.1" 200 41872
+192.168.2.42 - - [02/Jul/2018:20:01:48 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dosfstools/dosfstools-udeb_3.0.28-2ubuntu0.1_amd64.udeb HTTP/1.1" 200 40304
+192.168.2.42 - - [02/Jul/2018:20:01:48 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/hw-detect/driver-injection-disk-detect_1.117ubuntu2.3_all.udeb HTTP/1.1" 200 13534
+192.168.2.42 - - [02/Jul/2018:20:01:48 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/e/e2fsprogs/e2fsprogs-udeb_1.42.13-1ubuntu1_amd64.udeb HTTP/1.1" 200 257776
+192.168.2.42 - - [02/Jul/2018:20:01:48 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/finish-install/finish-install_2.59ubuntu1_all.udeb HTTP/1.1" 200 26572
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/firewire-core-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 64456
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/fs-core-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 1147094
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/fs-secondary-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 623936
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/fuse/fuse-udeb_2.9.4-1ubuntu3.1_amd64.udeb HTTP/1.1" 200 17100
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/grub-installer/grub-installer_1.128ubuntu5.1_amd64.udeb HTTP/1.1" 200 252300
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/grub2/grub-mount-udeb_2.02~beta2-36ubuntu3.17_amd64.udeb HTTP/1.1" 200 343062
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/ipmi-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 56220
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/irda-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 225000
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/j/jfsutils/jfsutils-udeb_1.1.15-2.1_amd64.udeb HTTP/1.1" 200 162150
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/attr/libattr1-udeb_2.4.47-2_amd64.udeb HTTP/1.1" 200 7410
+192.168.2.42 - - [02/Jul/2018:20:01:49 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libb/libbsd/libbsd0-udeb_0.8.2-1_amd64.udeb HTTP/1.1" 200 34444
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cryptsetup/libcryptsetup4-udeb_1.6.6-5ubuntu2.1_amd64.udeb HTTP/1.1" 200 64722
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/libdevmapper1.02.1-udeb_1.02.110-1ubuntu10_amd64.udeb HTTP/1.1" 200 117236
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/fuse/libfuse2-udeb_2.9.4-1ubuntu3.1_amd64.udeb HTTP/1.1" 200 65820
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lzo2/liblzo2-2-udeb_2.08-1.2_amd64.udeb HTTP/1.1" 200 40400
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/parted/libparted-fs-resize0-udeb_3.2-15ubuntu0.1_amd64.udeb HTTP/1.1" 200 34594
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/parted/libparted2-udeb_3.2-15ubuntu0.1_amd64.udeb HTTP/1.1" 200 95490
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/popt/libpopt0-udeb_1.16-10_amd64.udeb HTTP/1.1" 200 19784
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libu/libusb-1.0/libusb-1.0-0-udeb_1.0.20-1_amd64.udeb HTTP/1.1" 200 34914
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/live-installer/live-installer_51ubuntu2.1_amd64.udeb HTTP/1.1" 200 33996
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/lvm2-udeb_2.02.133-1ubuntu10_amd64.udeb HTTP/1.1" 200 454054
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/md-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 281144
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/mdadm/mdadm-udeb_3.3-2ubuntu7.6_amd64.udeb HTTP/1.1" 200 220300
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/message-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 198658
+192.168.2.42 - - [02/Jul/2018:20:01:50 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/reiserfsprogs/mkreiserfs-udeb_3.6.24-3.1_amd64.udeb HTTP/1.1" 200 69236
+192.168.2.42 - - [02/Jul/2018:20:01:51 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-firmware/nic-firmware_1.157.18_all.udeb HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:01:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/nobootloader/nobootloader_1.47_all.udeb HTTP/1.1" 200 73996
+192.168.2.42 - - [02/Jul/2018:20:01:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/ntfs-3g/ntfs-3g-udeb_2015.3.14AR.1-1ubuntu0.1_amd64.udeb HTTP/1.1" 200 217766
+192.168.2.42 - - [02/Jul/2018:20:01:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/open-iscsi/open-iscsi-udeb_2.0.873+git0.3b4b4500-14ubuntu3.4_amd64.udeb HTTP/1.1" 200 322598
+192.168.2.42 - - [02/Jul/2018:20:01:54 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/os-prober/os-prober-udeb_1.70ubuntu3.3_amd64.udeb HTTP/1.1" 200 14488
+192.168.2.42 - - [02/Jul/2018:20:01:54 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/parport-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 31324
+192.168.2.42 - - [02/Jul/2018:20:01:54 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partconf/partconf-mkfstab_1.49_amd64.udeb HTTP/1.1" 200 5784
+192.168.2.42 - - [02/Jul/2018:20:01:54 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-auto/partman-auto_134ubuntu1.2_amd64.udeb HTTP/1.1" 200 98634
+192.168.2.42 - - [02/Jul/2018:20:01:54 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-auto-crypto/partman-auto-crypto_22ubuntu1_all.udeb HTTP/1.1" 200 6348
+192.168.2.42 - - [02/Jul/2018:20:01:54 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-auto-loop/partman-auto-loop_0ubuntu21_all.udeb HTTP/1.1" 200 4216
+192.168.2.42 - - [02/Jul/2018:20:01:54 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-auto-lvm/partman-auto-lvm_56ubuntu1_all.udeb HTTP/1.1" 200 118240
+192.168.2.42 - - [02/Jul/2018:20:01:55 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-auto-raid/partman-auto-raid_30ubuntu1_all.udeb HTTP/1.1" 200 20410
+192.168.2.42 - - [02/Jul/2018:20:01:55 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-base/partman-base_187ubuntu2.1_amd64.udeb HTTP/1.1" 200 169524
+192.168.2.42 - - [02/Jul/2018:20:01:55 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-basicfilesystems/partman-basicfilesystems_120ubuntu1_amd64.udeb HTTP/1.1" 200 184000
+192.168.2.42 - - [02/Jul/2018:20:01:56 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-basicmethods/partman-basicmethods_61_all.udeb HTTP/1.1" 200 21110
+192.168.2.42 - - [02/Jul/2018:20:01:56 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-btrfs/partman-btrfs_18ubuntu1.1_all.udeb HTTP/1.1" 200 6328
+192.168.2.42 - - [02/Jul/2018:20:01:56 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-crypto/partman-crypto_86ubuntu1_amd64.udeb HTTP/1.1" 200 312546
+192.168.2.42 - - [02/Jul/2018:20:01:57 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-crypto/partman-crypto-dm_86ubuntu1_all.udeb HTTP/1.1" 200 1360
+192.168.2.42 - - [02/Jul/2018:20:01:57 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-efi/partman-efi_71ubuntu1_amd64.udeb HTTP/1.1" 200 39458
+192.168.2.42 - - [02/Jul/2018:20:01:57 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-ext3/partman-ext3_84ubuntu2_all.udeb HTTP/1.1" 200 85958
+192.168.2.42 - - [02/Jul/2018:20:01:57 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-iscsi/partman-iscsi_40ubuntu3_all.udeb HTTP/1.1" 200 29866
+192.168.2.42 - - [02/Jul/2018:20:01:58 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-jfs/partman-jfs_47_all.udeb HTTP/1.1" 200 31484
+192.168.2.42 - - [02/Jul/2018:20:01:58 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-lvm/partman-lvm_112_all.udeb HTTP/1.1" 200 310582
+192.168.2.42 - - [02/Jul/2018:20:01:59 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-md/partman-md_77_all.udeb HTTP/1.1" 200 206522
+192.168.2.42 - - [02/Jul/2018:20:01:59 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-partitioning/partman-partitioning_110ubuntu4.2_amd64.udeb HTTP/1.1" 200 190808
+192.168.2.42 - - [02/Jul/2018:20:02:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-target/partman-target_98ubuntu1_all.udeb HTTP/1.1" 200 138870
+192.168.2.42 - - [02/Jul/2018:20:02:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-base/partman-utils_187ubuntu2.1_amd64.udeb HTTP/1.1" 200 3564
+192.168.2.42 - - [02/Jul/2018:20:02:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/partman-xfs/partman-xfs_58_all.udeb HTTP/1.1" 200 5600
+192.168.2.42 - - [02/Jul/2018:20:02:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/pata-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 121558
+192.168.2.42 - - [02/Jul/2018:20:02:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/pcmcia-storage-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 65748
+192.168.2.42 - - [02/Jul/2018:20:02:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/pkgsel/pkgsel_0.43ubuntu1.1_all.udeb HTTP/1.1" 200 42982
+192.168.2.42 - - [02/Jul/2018:20:02:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/plip-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 8640
+192.168.2.42 - - [02/Jul/2018:20:02:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/ppp-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 24550
+192.168.2.42 - - [02/Jul/2018:20:02:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/rdate/rdate-udeb_1.2-6_amd64.udeb HTTP/1.1" 200 6810
+192.168.2.42 - - [02/Jul/2018:20:02:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/sata-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 94052
+192.168.2.42 - - [02/Jul/2018:20:02:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-firmware/scsi-firmware_1.157.18_all.udeb HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:02:02 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux-hwe/scsi-modules-4.13.0-36-generic-di_4.13.0-36.40~16.04.1_amd64.udeb HTTP/1.1" 200 2465978
+192.168.2.42 - - [02/Jul/2018:20:02:02 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/tzsetup/tzsetup-udeb_0.81ubuntu1_all.udeb HTTP/1.1" 200 72672
+192.168.2.42 - - [02/Jul/2018:20:02:03 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/usbutils/usbutils-udeb_007-4_amd64.udeb HTTP/1.1" 200 222800
+192.168.2.42 - - [02/Jul/2018:20:02:03 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/user-setup/user-setup-udeb_1.63ubuntu4_all.udeb HTTP/1.1" 200 189380
+192.168.2.42 - - [02/Jul/2018:20:02:03 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/x/xfsprogs/xfsprogs-udeb_4.3.0+nmu1ubuntu1.1_amd64.udeb HTTP/1.1" 200 138346
+192.168.2.42 - - [02/Jul/2018:20:02:25 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dmraid/dmraid-udeb_1.0.0.rc16-4.2ubuntu3_amd64.udeb HTTP/1.1" 200 10226
+192.168.2.42 - - [02/Jul/2018:20:02:25 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/multipath-tools/kpartx-udeb_0.5.0+git1.656f8865-5ubuntu2.5_amd64.udeb HTTP/1.1" 200 15854
+192.168.2.42 - - [02/Jul/2018:20:02:25 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dmraid/libdmraid1.0.0.rc16-udeb_1.0.0.rc16-4.2ubuntu3_amd64.udeb HTTP/1.1" 200 79790
+192.168.2.42 - - [02/Jul/2018:20:02:41 +0000] "GET /ubuntu-16.04.4-amd64/install/filesystem.squashfs HTTP/1.1" 200 72028160
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/InRelease HTTP/1.1" 404 241
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/InRelease HTTP/1.1" 404 249
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/Release HTTP/1.1" 200 4613
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/Release HTTP/1.1" 404 247
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/Release.gpg HTTP/1.1" 200 819
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.xz HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.xz HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.xz HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.xz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.bz2 HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.bz2 HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.bz2 HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.bz2 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.lzma HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.lzma HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.lzma HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.lzma HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.gz HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.gz HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.gz HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.gz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.lz4 HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.lz4 HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.lz4 HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.lz4 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages HTTP/1.1" 404 266
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages HTTP/1.1" 404 264
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en HTTP/1.1" 404 264
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/main/binary-amd64/by-hash/SHA256/72943cad80ad1ced0d0787f5791d907349f2316cf3ca979f9dae8b8a34831668 HTTP/1.1" 404 329
+192.168.2.42 - - [02/Jul/2018:20:02:44 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/main/binary-amd64/Packages.gz HTTP/1.1" 200 525963
+192.168.2.42 - - [02/Jul/2018:20:02:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libn/libnl3/libnl-3-200_3.2.27-1ubuntu0.16.04.1_amd64.deb HTTP/1.1" 200 52232
+192.168.2.42 - - [02/Jul/2018:20:02:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libn/libnl3/libnl-genl-3-200_3.2.27-1ubuntu0.16.04.1_amd64.deb HTTP/1.1" 200 11190
+192.168.2.42 - - [02/Jul/2018:20:02:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/w/wireless-regdb/wireless-regdb_2015.07.20-1ubuntu1_all.deb HTTP/1.1" 200 9058
+192.168.2.42 - - [02/Jul/2018:20:02:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/iw/iw_3.17-1_amd64.deb HTTP/1.1" 200 63476
+192.168.2.42 - - [02/Jul/2018:20:02:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/crda/crda_3.13-1_amd64.deb HTTP/1.1" 200 60482
+192.168.2.42 - - [02/Jul/2018:20:02:53 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/iucode-tool/iucode-tool_1.5.1-1ubuntu0.1_amd64.deb HTTP/1.1" 200 33822
+192.168.2.42 - - [02/Jul/2018:20:03:38 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/pciutils/libpci3_3.3.1-1.1ubuntu1.1_amd64.deb HTTP/1.1" 200 24460
+192.168.2.42 - - [02/Jul/2018:20:03:38 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/pciutils/pciutils_3.3.1-1.1ubuntu1.1_amd64.deb HTTP/1.1" 200 233996
+192.168.2.42 - - [02/Jul/2018:20:03:39 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libu/libusb-1.0/libusb-1.0-0_1.0.20-1_amd64.deb HTTP/1.1" 200 42902
+192.168.2.42 - - [02/Jul/2018:20:03:39 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/usbutils/usbutils_007-4_amd64.deb HTTP/1.1" 200 205738
+192.168.2.42 - - [02/Jul/2018:20:03:39 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/v/vlan/vlan_1.9-3.2ubuntu1.16.04.4_amd64.deb HTTP/1.1" 200 30592
+192.168.2.42 - - [02/Jul/2018:20:03:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/libdevmapper-event1.02.1_1.02.110-1ubuntu10_amd64.deb HTTP/1.1" 200 12240
+192.168.2.42 - - [02/Jul/2018:20:03:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/liblvm2cmd2.02_2.02.133-1ubuntu10_amd64.deb HTTP/1.1" 200 517716
+192.168.2.42 - - [02/Jul/2018:20:03:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/dmeventd_1.02.110-1ubuntu10_amd64.deb HTTP/1.1" 200 31272
+192.168.2.42 - - [02/Jul/2018:20:03:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/dmsetup_1.02.110-1ubuntu10_amd64.deb HTTP/1.1" 200 59872
+192.168.2.42 - - [02/Jul/2018:20:03:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/liblvm2app2.2_2.02.133-1ubuntu10_amd64.deb HTTP/1.1" 200 391652
+192.168.2.42 - - [02/Jul/2018:20:03:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/readline5/libreadline5_5.2%2bdfsg-3build1_amd64.deb HTTP/1.1" 200 99484
+192.168.2.42 - - [02/Jul/2018:20:03:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lvm2/lvm2_2.02.133-1ubuntu10_amd64.deb HTTP/1.1" 200 731404
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/InRelease HTTP/1.1" 404 241
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/InRelease HTTP/1.1" 404 249
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/InRelease HTTP/1.1" 404 251
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial/Release HTTP/1.1" 304 -
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/Release HTTP/1.1" 404 247
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/Release HTTP/1.1" 404 249
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.xz HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-i386/Packages.xz HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.xz HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en_US.xz HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.xz HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.xz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-i386/Packages.xz HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en_US.xz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-amd64/Packages.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-i386/Packages.xz HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-all/Packages.xz HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en_US.xz HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en.xz HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-amd64/Packages.xz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-i386/Packages.xz HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-all/Packages.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en_US.xz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-amd64/Packages.xz HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-i386/Packages.xz HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-all/Packages.xz HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en_US.xz HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en.xz HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-amd64/Packages.xz HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-i386/Packages.xz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-all/Packages.xz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en_US.xz HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en.xz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-amd64/Packages.xz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-i386/Packages.xz HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-all/Packages.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en_US.xz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en.xz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-amd64/Packages.xz HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-i386/Packages.xz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-all/Packages.xz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en_US.xz HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en.xz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.bz2 HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-i386/Packages.bz2 HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.bz2 HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en_US.bz2 HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.bz2 HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.bz2 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-i386/Packages.bz2 HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en_US.bz2 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-amd64/Packages.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-i386/Packages.bz2 HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-all/Packages.bz2 HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en_US.bz2 HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en.bz2 HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-amd64/Packages.bz2 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-i386/Packages.bz2 HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-all/Packages.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en_US.bz2 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-amd64/Packages.bz2 HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-i386/Packages.bz2 HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-all/Packages.bz2 HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en_US.bz2 HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en.bz2 HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-amd64/Packages.bz2 HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-i386/Packages.bz2 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-all/Packages.bz2 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en_US.bz2 HTTP/1.1" 404 279
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en.bz2 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-amd64/Packages.bz2 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-i386/Packages.bz2 HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-all/Packages.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en_US.bz2 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en.bz2 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-amd64/Packages.bz2 HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-i386/Packages.bz2 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-all/Packages.bz2 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en_US.bz2 HTTP/1.1" 404 279
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en.bz2 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.lzma HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-i386/Packages.lzma HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.lzma HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en_US.lzma HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.lzma HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.lzma HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-i386/Packages.lzma HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en_US.lzma HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-amd64/Packages.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-i386/Packages.lzma HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-all/Packages.lzma HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en_US.lzma HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en.lzma HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-amd64/Packages.lzma HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-i386/Packages.lzma HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-all/Packages.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en_US.lzma HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-amd64/Packages.lzma HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-i386/Packages.lzma HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-all/Packages.lzma HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en_US.lzma HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en.lzma HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-amd64/Packages.lzma HTTP/1.1" 404 279
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-i386/Packages.lzma HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-all/Packages.lzma HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en_US.lzma HTTP/1.1" 404 280
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en.lzma HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-amd64/Packages.lzma HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-i386/Packages.lzma HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-all/Packages.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en_US.lzma HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en.lzma HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-amd64/Packages.lzma HTTP/1.1" 404 279
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-i386/Packages.lzma HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-all/Packages.lzma HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en_US.lzma HTTP/1.1" 404 280
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en.lzma HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.gz HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-i386/Packages.gz HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.gz HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en_US.gz HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.gz HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.gz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-i386/Packages.gz HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en_US.gz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-amd64/Packages.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-i386/Packages.gz HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-all/Packages.gz HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en_US.gz HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en.gz HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-amd64/Packages.gz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-i386/Packages.gz HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-all/Packages.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en_US.gz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-amd64/Packages.gz HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-i386/Packages.gz HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-all/Packages.gz HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en_US.gz HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en.gz HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-amd64/Packages.gz HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-i386/Packages.gz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-all/Packages.gz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en_US.gz HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en.gz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-amd64/Packages.gz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-i386/Packages.gz HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-all/Packages.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en_US.gz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en.gz HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-amd64/Packages.gz HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-i386/Packages.gz HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-all/Packages.gz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en_US.gz HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en.gz HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages.lz4 HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-i386/Packages.lz4 HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages.lz4 HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en_US.lz4 HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en.lz4 HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages.lz4 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-i386/Packages.lz4 HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en_US.lz4 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-amd64/Packages.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-i386/Packages.lz4 HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-all/Packages.lz4 HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en_US.lz4 HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/i18n/Translation-en.lz4 HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-amd64/Packages.lz4 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-i386/Packages.lz4 HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/binary-all/Packages.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en_US.lz4 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/multiverse/i18n/Translation-en.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-amd64/Packages.lz4 HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-i386/Packages.lz4 HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-all/Packages.lz4 HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en_US.lz4 HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en.lz4 HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-amd64/Packages.lz4 HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-i386/Packages.lz4 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-all/Packages.lz4 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en_US.lz4 HTTP/1.1" 404 279
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en.lz4 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-amd64/Packages.lz4 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-i386/Packages.lz4 HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-all/Packages.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en_US.lz4 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/i18n/Translation-en.lz4 HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-amd64/Packages.lz4 HTTP/1.1" 404 278
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-i386/Packages.lz4 HTTP/1.1" 404 277
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/binary-all/Packages.lz4 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en_US.lz4 HTTP/1.1" 404 279
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/multiverse/i18n/Translation-en.lz4 HTTP/1.1" 404 276
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-amd64/Packages HTTP/1.1" 404 266
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-i386/Packages HTTP/1.1" 404 265
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/binary-all/Packages HTTP/1.1" 404 264
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en_US HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/main/i18n/Translation-en HTTP/1.1" 404 264
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-amd64/Packages HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-i386/Packages HTTP/1.1" 404 271
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/binary-all/Packages HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en_US HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/restricted/i18n/Translation-en HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-updates/universe/binary-amd64/Packages HTTP/1.1" 404 270
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-amd64/Packages HTTP/1.1" 404 268
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-i386/Packages HTTP/1.1" 404 267
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/binary-all/Packages HTTP/1.1" 404 266
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en_US HTTP/1.1" 404 269
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/main/i18n/Translation-en HTTP/1.1" 404 266
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-amd64/Packages HTTP/1.1" 404 274
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-i386/Packages HTTP/1.1" 404 273
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/binary-all/Packages HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en_US HTTP/1.1" 404 275
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/restricted/i18n/Translation-en HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:00 +0000] "GET /ubuntu-16.04.4-amd64/dists/xenial-backports/universe/binary-amd64/Packages HTTP/1.1" 404 272
+192.168.2.42 - - [02/Jul/2018:20:04:04 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/tasksel/tasksel-data_3.34ubuntu3_all.deb HTTP/1.1" 200 8082
+192.168.2.42 - - [02/Jul/2018:20:04:04 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/tasksel/tasksel_3.34ubuntu3_all.deb HTTP/1.1" 200 32524
+192.168.2.42 - - [02/Jul/2018:20:04:04 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dmidecode/dmidecode_3.0-2ubuntu0.1_amd64.deb HTTP/1.1" 200 48616
+192.168.2.42 - - [02/Jul/2018:20:04:04 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/laptop-detect/laptop-detect_0.13.7ubuntu2_amd64.deb HTTP/1.1" 200 5608
+192.168.2.42 - - [02/Jul/2018:20:04:05 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/installation-report/installation-report_2.60ubuntu1_all.deb HTTP/1.1" 200 7470
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/iso-codes/iso-codes_3.65-1_all.deb HTTP/1.1" 200 2267860
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-apt/python-apt-common_1.1.0%7ebeta1ubuntu0.16.04.1_all.deb HTTP/1.1" 200 16008
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-apt/python3-apt_1.1.0%7ebeta1ubuntu0.16.04.1_amd64.deb HTTP/1.1" 200 137236
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dbus/libdbus-1-3_1.10.6-1ubuntu3.3_amd64.deb HTTP/1.1" 200 160604
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/glib2.0/libglib2.0-0_2.48.2-0ubuntu1_amd64.deb HTTP/1.1" 200 1119192
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dbus-glib/libdbus-glib-1-2_0.106-1_amd64.deb HTTP/1.1" 200 67106
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dbus-python/python3-dbus_1.2.0-3_amd64.deb HTTP/1.1" 200 83076
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libc/libcap-ng/libcap-ng0_0.7.7-1_amd64.deb HTTP/1.1" 200 10914
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dbus/dbus_1.10.6-1ubuntu3.3_amd64.deb HTTP/1.1" 200 141732
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/accountsservice/libaccountsservice0_0.6.40-2ubuntu11.3_amd64.deb HTTP/1.1" 200 68730
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/policykit-1/libpolkit-gobject-1-0_0.105-14.1_amd64.deb HTTP/1.1" 200 36130
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/accountsservice/accountsservice_0.6.40-2ubuntu11.3_amd64.deb HTTP/1.1" 200 56054
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/language-selector/language-selector-common_0.165.4_all.deb HTTP/1.1" 200 213586
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/sgml-base/sgml-base_1.26%2bnmu4ubuntu1_all.deb HTTP/1.1" 200 12522
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gobject-introspection/libgirepository-1.0-1_1.46.0-3ubuntu1_amd64.deb HTTP/1.1" 200 88260
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gobject-introspection/gir1.2-glib-2.0_1.46.0-3ubuntu1_amd64.deb HTTP/1.1" 200 126620
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/glib2.0/libglib2.0-data_2.48.2-0ubuntu1_all.deb HTTP/1.1" 200 131506
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/icu/libicu55_55.1-7ubuntu0.3_amd64.deb HTTP/1.1" 200 7658434
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libx/libxml2/libxml2_2.9.3%2bdfsg1-1ubuntu0.5_amd64.deb HTTP/1.1" 200 697380
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/pygobject/python3-gi_3.20.0-0ubuntu1_amd64.deb HTTP/1.1" 200 152574
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/shared-mime-info/shared-mime-info_1.5-2ubuntu0.1_amd64.deb HTTP/1.1" 200 405266
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/x/xdg-user-dirs/xdg-user-dirs_0.15-2ubuntu6_amd64.deb HTTP/1.1" 200 61662
+192.168.2.42 - - [02/Jul/2018:20:04:06 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/x/xml-core/xml-core_0.13%2bnmu2_all.deb HTTP/1.1" 200 23274
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/texinfo/install-info_6.1.0.dfsg.1-5_amd64.deb HTTP/1.1" 200 52940
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bash-completion/bash-completion_2.1-4.2ubuntu1.1_all.deb HTTP/1.1" 200 152480
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gdbm/libgdbm3_1.8.3-13.1_amd64.deb HTTP/1.1" 200 16926
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libn/libnfnetlink/libnfnetlink0_1.0.1-3_amd64.deb HTTP/1.1" 200 13262
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libx/libxau/libxau6_1.0.8-1_amd64.deb HTTP/1.1" 200 8376
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libx/libxdmcp/libxdmcp6_1.1.2-1.1_amd64.deb HTTP/1.1" 200 11018
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libx/libxcb/libxcb1_1.11.1-1ubuntu1_amd64.deb HTTP/1.1" 200 40006
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libx/libx11/libx11-data_1.6.3-1ubuntu2_all.deb HTTP/1.1" 200 113070
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libx/libx11/libx11-6_1.6.3-1ubuntu2_amd64.deb HTTP/1.1" 200 570986
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libx/libxext/libxext6_1.3.3-1_amd64.deb HTTP/1.1" 200 29444
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/groff/groff-base_1.22.3-7_amd64.deb HTTP/1.1" 200 1150932
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bsdmainutils/bsdmainutils_9.0.6ubuntu3_amd64.deb HTTP/1.1" 200 174448
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libp/libpipeline/libpipeline1_1.4.1-2_amd64.deb HTTP/1.1" 200 24576
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/man-db/man-db_2.7.5-1_amd64.deb HTTP/1.1" 200 854130
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/fuse/libfuse2_2.9.4-1ubuntu3.1_amd64.deb HTTP/1.1" 200 89908
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/fuse/fuse_2.9.4-1ubuntu3.1_amd64.deb HTTP/1.1" 200 24430
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/ntfs-3g/ntfs-3g_2015.3.14AR.1-1ubuntu0.1_amd64.deb HTTP/1.1" 200 465934
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/popularity-contest/popularity-contest_1.64ubuntu2_all.deb HTTP/1.1" 200 32974
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/util-linux/uuid-runtime_2.27.1-6ubuntu3.4_amd64.deb HTTP/1.1" 200 26100
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/mpfr4/libmpfr4_3.1.4-1_amd64.deb HTTP/1.1" 200 190628
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libs/libsigsegv/libsigsegv2_2.10-4_amd64.deb HTTP/1.1" 200 14062
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gawk/gawk_4.1.3%2bdfsg-0.1_amd64.deb HTTP/1.1" 200 398064
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gpm/libgpm2_1.20.4-6.1_amd64.deb HTTP/1.1" 200 16530
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lzo2/liblzo2-2_2.08-1.2_amd64.deb HTTP/1.1" 200 48716
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/tcp-wrappers/libwrap0_7.6.q-25_amd64.deb HTTP/1.1" 200 46166
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/acl/acl_2.2.52-3_amd64.deb HTTP/1.1" 200 37960
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libn/libnetfilter-conntrack/libnetfilter-conntrack3_1.0.5-1_amd64.deb HTTP/1.1" 200 36634
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dnsmasq/dnsmasq-base_2.75-1ubuntu0.16.04.4_amd64.deb HTTP/1.1" 200 295168
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/iptables/iptables_1.6.0-2ubuntu3_amd64.deb HTTP/1.1" 200 265782
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apparmor/libapparmor-perl_2.10.95-0ubuntu2.8_amd64.deb HTTP/1.1" 200 31404
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apparmor/apparmor_2.10.95-0ubuntu2.8_amd64.deb HTTP/1.1" 200 450172
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lxc/lxc-common_2.0.8-0ubuntu1%7e16.04.2_amd64.deb HTTP/1.1" 200 28820
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/rsync/rsync_3.1.1-3ubuntu1.2_amd64.deb HTTP/1.1" 200 328666
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lxc/liblxc1_2.0.8-0ubuntu1%7e16.04.2_amd64.deb HTTP/1.1" 200 215348
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lxd/lxd-client_2.0.11-0ubuntu1%7e16.04.4_amd64.deb HTTP/1.1" 200 1883838
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lxcfs/lxcfs_2.0.8-0ubuntu1%7e16.04.2_amd64.deb HTTP/1.1" 200 39778
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/squashfs-tools/squashfs-tools_4.3-3ubuntu2.16.04.1_amd64.deb HTTP/1.1" 200 104488
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/shadow/uidmap_4.2-3.1ubuntu5.3_amd64.deb HTTP/1.1" 200 64850
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/x/xz-utils/xz-utils_5.1.1alpha%2b20120614-2ubuntu2_amd64.deb HTTP/1.1" 200 78794
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lxd/lxd_2.0.11-0ubuntu1%7e16.04.4_amd64.deb HTTP/1.1" 200 3505370
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/open-iscsi/open-iscsi_2.0.873%2bgit0.3b4b4500-14ubuntu3.4_amd64.deb HTTP/1.1" 200 333576
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/perl/perl-modules-5.22_5.22.1-9ubuntu0.2_all.deb HTTP/1.1" 200 2661200
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/perl/libperl5.22_5.22.1-9ubuntu0.2_amd64.deb HTTP/1.1" 200 3391360
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/perl/perl_5.22.1-9ubuntu0.2_amd64.deb HTTP/1.1" 200 237412
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-setuptools/python3-pkg-resources_20.7.0-1_all.deb HTTP/1.1" 200 79002
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/chardet/python3-chardet_2.3.0-2_all.deb HTTP/1.1" 200 96226
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/six/python3-six_1.10.0-3_all.deb HTTP/1.1" 200 10980
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-debian/python3-debian_0.1.27ubuntu2_all.deb HTTP/1.1" 200 43560
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/patch/patch_2.7.5-1_amd64.deb HTTP/1.1" 200 90382
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/ubuntu-release-upgrader/python3-distupgrade_16.04.24_all.deb HTTP/1.1" 200 104182
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/update-manager/python3-update-manager_16.04.12_all.deb HTTP/1.1" 200 32158
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/ubuntu-release-upgrader/ubuntu-release-upgrader-core_16.04.24_all.deb HTTP/1.1" 200 29568
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/update-manager/update-manager-core_16.04.12_all.deb HTTP/1.1" 200 5528
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/update-notifier/update-notifier-common_3.168.7_all.deb HTTP/1.1" 200 164320
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/k/krb5/libkrb5support0_1.13.2%2bdfsg-5ubuntu2_amd64.deb HTTP/1.1" 200 30794
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/k/krb5/libk5crypto3_1.13.2%2bdfsg-5ubuntu2_amd64.deb HTTP/1.1" 200 81172
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/k/keyutils/libkeyutils1_1.5.9-8ubuntu1_amd64.deb HTTP/1.1" 200 9904
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/k/krb5/libkrb5-3_1.13.2%2bdfsg-5ubuntu2_amd64.deb HTTP/1.1" 200 272582
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/k/krb5/libgssapi-krb5-2_1.13.2%2bdfsg-5ubuntu2_amd64.deb HTTP/1.1" 200 120068
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libroken18-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 41418
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libasn1-8-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 174312
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libhcrypto4-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 84992
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libheimbase1-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 29258
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libwind0-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 47846
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libhx509-5-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 107142
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libkrb5-26-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 201874
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libheimntlm0-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 15118
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/heimdal/libgssapi3-heimdal_1.7%7egit20150920%2bdfsg-4ubuntu1.16.04.1_amd64.deb HTTP/1.1" 200 96132
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cyrus-sasl2/libsasl2-modules-db_2.1.26.dfsg1-14build1_amd64.deb HTTP/1.1" 200 14458
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cyrus-sasl2/libsasl2-2_2.1.26.dfsg1-14build1_amd64.deb HTTP/1.1" 200 48708
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/openldap/libldap-2.4-2_2.4.42%2bdfsg-2ubuntu3.2_amd64.deb HTTP/1.1" 200 160242
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/rtmpdump/librtmp1_2.4%2b20151223.gitfa8646d-1ubuntu0.1_amd64.deb HTTP/1.1" 200 54436
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/curl/libcurl3-gnutls_7.47.0-1ubuntu2.6_amd64.deb HTTP/1.1" 200 184348
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apt/apt-transport-https_1.2.25_amd64.deb HTTP/1.1" 200 26116
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/geoip/libgeoip1_1.6.9-1_amd64.deb HTTP/1.1" 200 70080
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bind9/libisc160_9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb HTTP/1.1" 200 214716
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bind9/libdns162_9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb HTTP/1.1" 200 880302
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bind9/libisccc140_9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb HTTP/1.1" 200 16296
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bind9/libisccfg140_9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb HTTP/1.1" 200 40494
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bind9/libbind9-140_9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb HTTP/1.1" 200 23606
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bind9/liblwres141_9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb HTTP/1.1" 200 33778
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bind9/bind9-host_9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb HTTP/1.1" 200 38400
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/busybox/busybox-static_1.22.0-15ubuntu1_amd64.deb HTTP/1.1" 200 869562
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/openssl/openssl_1.0.2g-1ubuntu4.10_amd64.deb HTTP/1.1" 200 491774
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/ca-certificates/ca-certificates_20170717%7e16.04.1_all.deb HTTP/1.1" 200 167504
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/command-not-found/command-not-found-data_0.3ubuntu16.04.2_amd64.deb HTTP/1.1" 200 878672
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python3-stdlib-extensions/python3-gdbm_3.5.1-1_amd64.deb HTTP/1.1" 200 12200
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/command-not-found/python3-commandnotfound_0.3ubuntu16.04.2_all.deb HTTP/1.1" 200 5766
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/command-not-found/command-not-found_0.3ubuntu16.04.2_all.deb HTTP/1.1" 200 3696
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bind9/dnsutils_9.10.3.dfsg.P4-8ubuntu1.10_amd64.deb HTTP/1.1" 200 88892
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dosfstools/dosfstools_3.0.28-2ubuntu0.1_amd64.deb HTTP/1.1" 200 63054
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/e/ed/ed_1.10-2_amd64.deb HTTP/1.1" 200 49396
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/friendly-recovery/friendly-recovery_0.2.31_all.deb HTTP/1.1" 200 9868
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/netkit-ftp/ftp_0.17-33_amd64.deb HTTP/1.1" 200 52440
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/geoip-database/geoip-database_20160408-1_all.deb HTTP/1.1" 200 1678424
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gettext/libasprintf0v5_0.19.7-2ubuntu3_amd64.deb HTTP/1.1" 200 6412
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gettext/gettext-base_0.19.7-2ubuntu3_amd64.deb HTTP/1.1" 200 47864
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/h/hdparm/hdparm_9.48%2bds-1_amd64.deb HTTP/1.1" 200 92542
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/texinfo/info_6.1.0.dfsg.1-5_amd64.deb HTTP/1.1" 200 97720
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/iputils/iputils-tracepath_20121221-5ubuntu2_amd64.deb HTTP/1.1" 200 32762
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/numactl/libnuma1_2.0.11-1ubuntu1.1_amd64.deb HTTP/1.1" 200 21046
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/irqbalance/irqbalance_1.1.0-2ubuntu1_amd64.deb HTTP/1.1" 200 30584
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/k/krb5/krb5-locales_1.13.2%2bdfsg-5ubuntu2_all.deb HTTP/1.1" 200 13214
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libd/libdrm/libdrm-common_2.4.83-1%7e16.04.1_all.deb HTTP/1.1" 200 4870
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libd/libdrm/libdrm2_2.4.83-1%7e16.04.1_amd64.deb HTTP/1.1" 200 30370
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libe/libedit/libedit2_3.1-20150325-1ubuntu2_amd64.deb HTTP/1.1" 200 76498
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/systemd/libpam-systemd_229-4ubuntu21.1_amd64.deb HTTP/1.1" 200 115504
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/parted/libparted2_3.2-15ubuntu0.1_amd64.deb HTTP/1.1" 200 115466
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libp/libpcap/libpcap0.8_1.7.4-2_amd64.deb HTTP/1.1" 200 116794
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/plymouth/libplymouth4_0.9.2-3ubuntu13.2_amd64.deb HTTP/1.1" 200 85076
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cyrus-sasl2/libsasl2-modules_2.1.26.dfsg1-14build1_amd64.deb HTTP/1.1" 200 47526
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libx/libxmu/libxmuu1_1.1.2-2_amd64.deb HTTP/1.1" 200 9674
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lshw/lshw_02.17-1.1ubuntu3.4_amd64.deb HTTP/1.1" 200 215542
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lsof/lsof_4.89%2bdfsg-0.1_amd64.deb HTTP/1.1" 200 247530
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/ltrace/ltrace_0.7.3-5.1ubuntu4_amd64.deb HTTP/1.1" 200 130274
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/manpages/manpages_4.04-2_all.deb HTTP/1.1" 200 1086712
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/mlocate/mlocate_0.26-1ubuntu2_amd64.deb HTTP/1.1" 200 45394
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/mtr/mtr-tiny_0.86-1ubuntu0.1_amd64.deb HTTP/1.1" 200 38204
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/nano/nano_2.5.3-2ubuntu2_amd64.deb HTTP/1.1" 200 190566
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/openssh/openssh-client_7.2p2-4ubuntu2.4_amd64.deb HTTP/1.1" 200 588944
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/parted/parted_3.2-15ubuntu0.1_amd64.deb HTTP/1.1" 200 42418
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/plymouth/plymouth_0.9.2-3ubuntu13.2_amd64.deb HTTP/1.1" 200 107412
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/plymouth/plymouth-theme-ubuntu-text_0.9.2-3ubuntu13.2_amd64.deb HTTP/1.1" 200 9094
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/powermgmt-base/powermgmt-base_1.31%2bnmu1_all.deb HTTP/1.1" 200 7178
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/psmisc/psmisc_22.21-2.1build1_amd64.deb HTTP/1.1" 200 48012
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/strace/strace_4.11-1ubuntu3_amd64.deb HTTP/1.1" 200 179014
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/tcpdump/tcpdump_4.9.2-0ubuntu0.16.04.1_amd64.deb HTTP/1.1" 200 387196
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/netkit-telnet/telnet_0.17-40_amd64.deb HTTP/1.1" 200 63460
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/time/time_1.7-25.1_amd64.deb HTTP/1.1" 200 26186
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/w/wget/wget_1.17.1-1ubuntu1.3_amd64.deb HTTP/1.1" 200 298712
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/ubuntu-meta/ubuntu-standard_1.361.1_amd64.deb HTTP/1.1" 200 2608
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/ufw/ufw_0.35-0ubuntu2_all.deb HTTP/1.1" 200 148580
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/x/xauth/xauth_1.0.9-1ubuntu2_amd64.deb HTTP/1.1" 200 22742
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/acpid/acpid_2.0.26-1ubuntu2_amd64.deb HTTP/1.1" 200 35614
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apport/python3-problem-report_2.20.1-0ubuntu2.15_all.deb HTTP/1.1" 200 9942
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apport/python3-apport_2.20.1-0ubuntu2.15_all.deb HTTP/1.1" 200 79564
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apport/apport_2.20.1-0ubuntu2.15_all.deb HTTP/1.1" 200 120808
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/apport-symptoms/apport-symptoms_0.20_all.deb HTTP/1.1" 200 14198
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/at/at_3.1.18-2ubuntu1_amd64.deb HTTP/1.1" 200 37756
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/bcache-tools/bcache-tools_1.0.8-2_amd64.deb HTTP/1.1" 200 18602
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/btrfs-tools/btrfs-tools_4.4-1ubuntu1_amd64.deb HTTP/1.1" 200 523206
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/newt/python3-newt_0.52.18-1ubuntu2_amd64.deb HTTP/1.1" 200 18884
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libe/libevent/libevent-2.0-5_2.0.21-stable-2ubuntu0.16.04.1_amd64.deb HTTP/1.1" 200 114014
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libu/libutempter/libutempter0_1.1.6-3_amd64.deb HTTP/1.1" 200 7898
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/tmux/tmux_2.1-3build1_amd64.deb HTTP/1.1" 200 223306
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/screen/screen_4.3.1-2build1_amd64.deb HTTP/1.1" 200 559662
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/byobu/byobu_5.106-0ubuntu1_all.deb HTTP/1.1" 200 104598
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cryptsetup/cryptsetup-bin_1.6.6-5ubuntu2.1_amd64.deb HTTP/1.1" 200 61794
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cryptsetup/cryptsetup_1.6.6-5ubuntu2.1_amd64.deb HTTP/1.1" 200 122948
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/curl/curl_7.47.0-1ubuntu2.6_amd64.deb HTTP/1.1" 200 138468
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dns-root-data/dns-root-data_2015052300%2bh%2b1_all.deb HTTP/1.1" 200 15016
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/e/ethtool/ethtool_4.5-1_amd64.deb HTTP/1.1" 200 97500
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/ubuntu-font-family-sources/fonts-ubuntu-font-family-console_0.83-0ubuntu2_all.deb HTTP/1.1" 200 14810
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libe/liberror-perl/liberror-perl_0.17-1.2_all.deb HTTP/1.1" 200 19594
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/git/git-man_2.7.4-0ubuntu1.3_all.deb HTTP/1.1" 200 735568
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/git/git_2.7.4-0ubuntu1.3_amd64.deb HTTP/1.1" 200 3102226
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/ifenslave/ifenslave_2.7ubuntu1_all.deb HTTP/1.1" 200 13362
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libd/libdumbnet/libdumbnet1_1.12-7_amd64.deb HTTP/1.1" 200 25748
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libm/libmspack/libmspack0_0.5-1ubuntu0.16.04.1_amd64.deb HTTP/1.1" 200 36980
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/policykit-1/libpolkit-agent-1-0_0.105-14.1_amd64.deb HTTP/1.1" 200 14816
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/policykit-1/libpolkit-backend-1-0_0.105-14.1_amd64.deb HTTP/1.1" 200 35826
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python3.5/libpython3.5_3.5.2-2ubuntu0%7e16.04.4_amd64.deb HTTP/1.1" 200 1360026
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/mdadm/mdadm_3.3-2ubuntu7.6_amd64.deb HTTP/1.1" 200 394388
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/ncurses/ncurses-term_6.0%2b20160213-1ubuntu1_all.deb HTTP/1.1" 200 249166
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/openssh/openssh-sftp-server_7.2p2-4ubuntu2.4_amd64.deb HTTP/1.1" 200 38718
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/openssh/openssh-server_7.2p2-4ubuntu2.4_amd64.deb HTTP/1.1" 200 334942
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/pastebinit/pastebinit_1.5-1_all.deb HTTP/1.1" 200 14582
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/policykit-1/policykit-1_0.105-14.1_amd64.deb HTTP/1.1" 200 53018
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/pycurl/python3-pycurl_7.43.0-1ubuntu1_amd64.deb HTTP/1.1" 200 42334
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-urllib3/python3-urllib3_1.13.1-2ubuntu0.16.04.1_all.deb HTTP/1.1" 200 57314
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/requests/python3-requests_2.9.1-3_all.deb HTTP/1.1" 200 55360
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/software-properties/python3-software-properties_0.96.20.7_all.deb HTTP/1.1" 200 20312
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-systemd/python3-systemd_231-2build1_amd64.deb HTTP/1.1" 200 31274
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/rename/rename_0.20-4_all.deb HTTP/1.1" 200 12010
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/run-one/run-one_1.17-0ubuntu1_all.deb HTTP/1.1" 200 5760
+192.168.2.42 - - [02/Jul/2018:20:04:12 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/snapd/snapd_2.29.4.2_amd64.deb HTTP/1.1" 200 12994416
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/software-properties/software-properties-common_0.96.20.7_all.deb HTTP/1.1" 200 9452
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/sosreport/sosreport_3.5-1%7eubuntu16.04.2_amd64.deb HTTP/1.1" 200 121342
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/t/tcp-wrappers/tcpd_7.6.q-25_amd64.deb HTTP/1.1" 200 22988
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/ubuntu-cloudimage-keyring/ubuntu-cloudimage-keyring_2013.11.11_all.deb HTTP/1.1" 200 4504
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cloud-utils/cloud-guest-utils_0.27-0ubuntu25_all.deb HTTP/1.1" 200 15178
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cloud-initramfs-tools/cloud-initramfs-copymods_0.27ubuntu1.5_all.deb HTTP/1.1" 200 4384
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cloud-initramfs-tools/cloud-initramfs-dyn-netconf_0.27ubuntu1.5_all.deb HTTP/1.1" 200 6946
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cloud-init/grub-legacy-ec2_17.1-46-g7acc9e68-0ubuntu1%7e16.04.1_all.deb HTTP/1.1" 200 27364
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/open-vm-tools/open-vm-tools_10.0.7-3227872-5ubuntu1%7e16.04.2_amd64.deb HTTP/1.1" 200 431726
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cloud-initramfs-tools/overlayroot_0.27ubuntu1.5_all.deb HTTP/1.1" 200 15792
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/v/vim/vim-runtime_7.4.1689-3ubuntu1.2_all.deb HTTP/1.1" 200 5163670
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/v/vim/vim_7.4.1689-3ubuntu1.2_amd64.deb HTTP/1.1" 200 1035696
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/x/xfsprogs/xfsprogs_4.3.0%2bnmu1ubuntu1.1_amd64.deb HTTP/1.1" 200 596704
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/ubuntu-meta/ubuntu-server_1.361.1_amd64.deb HTTP/1.1" 200 2456
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/u/unattended-upgrades/unattended-upgrades_0.90ubuntu0.9_all.deb HTTP/1.1" 200 32302
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/ssh-import-id/ssh-import-id_5.5-0ubuntu1_all.deb HTTP/1.1" 200 10208
+192.168.2.42 - - [02/Jul/2018:20:04:13 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/z/zerofree/zerofree_1.0.3-1_amd64.deb HTTP/1.1" 200 7928
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libn/libnfsidmap/libnfsidmap2_0.25-5_amd64.deb HTTP/1.1" 200 32182
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/autogen/libopts25_5.18.7-3_amd64.deb HTTP/1.1" 200 57816
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/ntp/ntp_4.2.8p4%2bdfsg-3ubuntu5.8_amd64.deb HTTP/1.1" 200 518072
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/ntp/ntpdate_4.2.8p4%2bdfsg-3ubuntu5.8_amd64.deb HTTP/1.1" 200 48668
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python2.7/libpython2.7-minimal_2.7.12-1ubuntu0%7e16.04.3_amd64.deb HTTP/1.1" 200 339810
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python2.7/python2.7-minimal_2.7.12-1ubuntu0%7e16.04.3_amd64.deb HTTP/1.1" 200 1260514
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-defaults/python-minimal_2.7.12-1%7e16.04_amd64.deb HTTP/1.1" 200 28122
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python2.7/libpython2.7-stdlib_2.7.12-1ubuntu0%7e16.04.3_amd64.deb HTTP/1.1" 200 1879814
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python2.7/python2.7_2.7.12-1ubuntu0%7e16.04.3_amd64.deb HTTP/1.1" 200 223780
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-defaults/libpython-stdlib_2.7.12-1%7e16.04_amd64.deb HTTP/1.1" 200 7768
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/python-defaults/python_2.7.12-1%7e16.04_amd64.deb HTTP/1.1" 200 136856
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/mpclib3/libmpc3_1.0.3-1_amd64.deb HTTP/1.1" 200 39676
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libt/libtirpc/libtirpc1_0.2.5-1_amd64.deb HTTP/1.1" 200 75624
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/binutils/binutils_2.26.1-1ubuntu1%7e16.04.6_amd64.deb HTTP/1.1" 200 2311412
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/glibc/libc-dev-bin_2.23-0ubuntu10_amd64.deb HTTP/1.1" 200 68662
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/linux/linux-libc-dev_4.4.0-116.140_amd64.deb HTTP/1.1" 200 822542
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/glibc/libc6-dev_2.23-0ubuntu10_amd64.deb HTTP/1.1" 200 2079216
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/i/isl/libisl15_0.16.1-1_amd64.deb HTTP/1.1" 200 524254
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/cpp-5_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 7684566
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-defaults/cpp_5.3.1-1ubuntu1_amd64.deb HTTP/1.1" 200 27662
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libcc1-0_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 38772
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libgomp1_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 55026
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libitm1_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 27440
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libatomic1_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 8882
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libasan2_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 264302
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/liblsan0_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 104818
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libtsan0_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 243930
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libubsan0_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 95242
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libcilkrts5_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 40090
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libmpx0_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 9774
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libquadmath0_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 131240
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libgcc-5-dev_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 2241670
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/gcc-5_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 8650120
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-defaults/gcc_5.3.1-1ubuntu1_amd64.deb HTTP/1.1" 200 5244
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/libstdc%2b%2b-5-dev_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 1427160
+192.168.2.42 - - [02/Jul/2018:20:05:00 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-5/g%2b%2b-5_5.4.0-6ubuntu1%7e16.04.9_amd64.deb HTTP/1.1" 200 8333450
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/gcc-defaults/g%2b%2b_5.3.1-1ubuntu1_amd64.deb HTTP/1.1" 200 1504
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/make-dfsg/make_4.1-6_amd64.deb HTTP/1.1" 200 150924
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dpkg/libdpkg-perl_1.18.4ubuntu1.3_all.deb HTTP/1.1" 200 195326
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/d/dpkg/dpkg-dev_1.18.4ubuntu1.3_all.deb HTTP/1.1" 200 584184
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/b/build-essential/build-essential_12.1ubuntu2_amd64.deb HTTP/1.1" 200 4758
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cracklib2/libcrack2_2.9.2-1ubuntu1_amd64.deb HTTP/1.1" 200 28244
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/c/cracklib2/cracklib-runtime_2.9.2-1ubuntu1_amd64.deb HTTP/1.1" 200 133938
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/fakeroot/libfakeroot_1.20.2-1ubuntu1_amd64.deb HTTP/1.1" 200 25510
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/fakeroot/fakeroot_1.20.2-1ubuntu1_amd64.deb HTTP/1.1" 200 61784
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/k/keyutils/keyutils_1.5.9-8ubuntu1_amd64.deb HTTP/1.1" 200 47054
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/liba/libaio/libaio1_0.3.110-2_amd64.deb HTTP/1.1" 200 6356
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/liba/libalgorithm-diff-perl/libalgorithm-diff-perl_1.19.03-1_all.deb HTTP/1.1" 200 47622
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/liba/libalgorithm-diff-xs-perl/libalgorithm-diff-xs-perl_0.04-4build1_amd64.deb HTTP/1.1" 200 10998
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/liba/libalgorithm-merge-perl/libalgorithm-merge-perl_0.08-3_all.deb HTTP/1.1" 200 11992
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/libf/libfile-fcntllock-perl/libfile-fcntllock-perl_0.22-3_amd64.deb HTTP/1.1" 200 32002
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/scowl/wamerican_7.1-1_all.deb HTTP/1.1" 200 269024
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/p/pam/libpam-cracklib_1.1.8-3.2ubuntu2_amd64.deb HTTP/1.1" 200 13006
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/l/lm-sensors/libsensors4_3.4.0-2_amd64.deb HTTP/1.1" 200 28368
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/net-snmp/libsnmp-base_5.7.3%2bdfsg-1ubuntu4_all.deb HTTP/1.1" 200 224196
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/net-snmp/libsnmp30_5.7.3%2bdfsg-1ubuntu4_amd64.deb HTTP/1.1" 200 812948
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/manpages/manpages-dev_4.04-2_all.deb HTTP/1.1" 200 2047608
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/r/rpcbind/rpcbind_0.2.3-0.2_amd64.deb HTTP/1.1" 200 40252
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/nfs-utils/nfs-common_1.2.8-9ubuntu12.1_amd64.deb HTTP/1.1" 200 184334
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/net-snmp/snmp_5.7.3%2bdfsg-1ubuntu4_amd64.deb HTTP/1.1" 200 154478
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/n/net-snmp/snmpd_5.7.3%2bdfsg-1ubuntu4_amd64.deb HTTP/1.1" 200 57124
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/sysstat/sysstat_11.2.0-1ubuntu0.2_amd64.deb HTTP/1.1" 200 242708
+192.168.2.42 - - [02/Jul/2018:20:05:01 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/a/autofs/autofs_5.1.1-1ubuntu3.1_amd64.deb HTTP/1.1" 200 464128
+192.168.2.42 - - [02/Jul/2018:20:05:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/f/freetype/libfreetype6_2.6.1-0.1ubuntu2.3_amd64.deb HTTP/1.1" 200 315506
+192.168.2.42 - - [02/Jul/2018:20:05:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/grub2/grub-common_2.02%7ebeta2-36ubuntu3.17_amd64.deb HTTP/1.1" 200 1705346
+192.168.2.42 - - [02/Jul/2018:20:05:41 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/o/os-prober/os-prober_1.70ubuntu3.3_amd64.deb HTTP/1.1" 200 19058
+192.168.2.42 - - [02/Jul/2018:20:05:44 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/grub2/grub2-common_2.02%7ebeta2-36ubuntu3.17_amd64.deb HTTP/1.1" 200 511108
+192.168.2.42 - - [02/Jul/2018:20:05:44 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/e/efivar/libefivar0_0.23-2_amd64.deb HTTP/1.1" 200 44320
+192.168.2.42 - - [02/Jul/2018:20:05:44 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/e/efibootmgr/efibootmgr_0.12-4_amd64.deb HTTP/1.1" 200 20320
+192.168.2.42 - - [02/Jul/2018:20:05:44 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/grub2/grub-efi-amd64-bin_2.02%7ebeta2-36ubuntu3.17_amd64.deb HTTP/1.1" 200 661486
+192.168.2.42 - - [02/Jul/2018:20:05:44 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/grub2/grub-efi-amd64_2.02%7ebeta2-36ubuntu3.17_amd64.deb HTTP/1.1" 200 65852
+192.168.2.42 - - [02/Jul/2018:20:05:44 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/g/grub2-signed/grub-efi-amd64-signed_1.66.17%2b2.02%7ebeta2-36ubuntu3.17_amd64.deb HTTP/1.1" 200 296686
+192.168.2.42 - - [02/Jul/2018:20:05:44 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/sbsigntool/sbsigntool_0.6-0ubuntu10.1_amd64.deb HTTP/1.1" 200 54244
+192.168.2.42 - - [02/Jul/2018:20:05:44 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/secureboot-db/secureboot-db_1.1_amd64.deb HTTP/1.1" 200 2740
+192.168.2.42 - - [02/Jul/2018:20:05:46 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/m/mokutil/mokutil_0.3.0-0ubuntu3_amd64.deb HTTP/1.1" 200 20442
+192.168.2.42 - - [02/Jul/2018:20:05:46 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/shim/shim_13-0ubuntu2_amd64.deb HTTP/1.1" 200 440432
+192.168.2.42 - - [02/Jul/2018:20:05:46 +0000] "GET /ubuntu-16.04.4-amd64/pool/main/s/shim-signed/shim-signed_1.33.1%7e16.04.1%2b13-0ubuntu2_amd64.deb HTTP/1.1" 200 316490
+192.168.2.42 - - [02/Jul/2018:20:05:55 +0000] "GET /sources.list HTTP/1.1" 200 451
+192.168.2.42 - - [02/Jul/2018:20:05:55 +0000] "GET /aknode44.firstboot.sh HTTP/1.1" 200 1533
+Waiting for server [192.168.2.42] to reboot Mon Jul 2 20:05:55 UTC 2018
+Waiting for server to shutdown...
+PING 192.168.2.42 (192.168.2.42) 56(84) bytes of data.
+64 bytes from 192.168.2.42: icmp_seq=1 ttl=64 time=0.147 ms
+64 bytes from 192.168.2.42: icmp_seq=2 ttl=64 time=0.145 ms
+64 bytes from 192.168.2.42: icmp_seq=3 ttl=64 time=0.143 ms
+64 bytes from 192.168.2.42: icmp_seq=4 ttl=64 time=0.132 ms
+64 bytes from 192.168.2.42: icmp_seq=5 ttl=64 time=0.113 ms
+64 bytes from 192.168.2.42: icmp_seq=6 ttl=64 time=0.095 ms
+64 bytes from 192.168.2.42: icmp_seq=7 ttl=64 time=0.072 ms
+64 bytes from 192.168.2.42: icmp_seq=8 ttl=64 time=0.132 ms
+From 192.168.2.44 icmp_seq=15 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=16 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=17 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=18 Destination Host Unreachable
+Waiting for server to come back up...
+PING 192.168.2.42 (192.168.2.42) 56(84) bytes of data.
+From 192.168.2.44 icmp_seq=1 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=2 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=3 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=4 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=5 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=6 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=7 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=8 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=9 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=10 Destination Host Unreachable
+From 192.168.2.44 icmp_seq=11 Destination Host Unreachable
+64 bytes from 192.168.2.42: icmp_seq=12 ttl=64 time=0.378 ms
+64 bytes from 192.168.2.42: icmp_seq=13 ttl=64 time=0.089 ms
+64 bytes from 192.168.2.42: icmp_seq=14 ttl=64 time=0.147 ms
+64 bytes from 192.168.2.42: icmp_seq=15 ttl=64 time=0.146 ms
+Setting up ssh keys for user [root] with home [/root]
+  Removing any old host keys for [192.168.2.42]
+total 20
+-rw------- 1 root root 1204 Jun 25 21:29 authorized_keys
+-rw------- 1 root root 1675 Jun 27 00:06 id_rsa
+-rw-r--r-- 1 root root  397 Jun 27 00:06 id_rsa.pub
+-rw------- 1 root root 1774 Jul  2 19:54 known_hosts
+-rw------- 1 root root 1330 Jul  2 13:01 known_hosts.old
+Host 192.168.2.42 not found in /root/.ssh/known_hosts
+total 20
+-rw------- 1 root root 1204 Jun 25 21:29 authorized_keys
+-rw------- 1 root root 1675 Jun 27 00:06 id_rsa
+-rw-r--r-- 1 root root  397 Jun 27 00:06 id_rsa.pub
+-rw------- 1 root root 1774 Jul  2 19:54 known_hosts
+-rw------- 1 root root 1330 Jul  2 13:01 known_hosts.old
+  Getting new host keys for [192.168.2.42]
+# 192.168.2.42:22 SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.4
+  copying user key to [root@192.168.2.42]
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'root@192.168.2.42'"
+and check to make sure that only the key(s) you wanted were added.
+
+Running first boot script
+### BEGINING FIRSTBOOT SCRIPT ### [Mon Jul  2 15:09:47 UTC 2018]
+
+### BUILDING SERVER [aknode44]
+
+Updating available packages
+Hit:1 http://archive.ubuntu.com/ubuntu xenial InRelease
+Get:2 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:4 http://archive.ubuntu.com/ubuntu xenial/main i386 Packages [1,196 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [8,344 B]
+Get:6 http://archive.ubuntu.com/ubuntu xenial/restricted i386 Packages [8,684 B]
+Get:7 http://archive.ubuntu.com/ubuntu xenial/restricted Translation-en [2,908 B]
+Get:8 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [7,532 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial/universe i386 Packages [7,512 kB]
+Get:10 http://archive.ubuntu.com/ubuntu xenial/universe Translation-en [4,354 kB]
+Get:11 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [144 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial/multiverse i386 Packages [140 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial/multiverse Translation-en [106 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [803 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [732 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [331 kB]
+Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [7,560 B]
+Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/restricted i386 Packages [7,520 B]
+Get:19 http://archive.ubuntu.com/ubuntu xenial-updates/restricted Translation-en [2,272 B]
+Get:20 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [640 kB]
+Get:21 http://archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [584 kB]
+Get:22 http://archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [258 kB]
+Get:23 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [16.4 kB]
+Get:24 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse i386 Packages [15.5 kB]
+Get:25 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse Translation-en [8,344 B]
+Get:26 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [6,740 B]
+Get:27 http://archive.ubuntu.com/ubuntu xenial-backports/main i386 Packages [6,732 B]
+Get:28 http://archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [4,180 B]
+Get:29 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7,412 B]
+Get:30 http://archive.ubuntu.com/ubuntu xenial-backports/universe i386 Packages [7,104 B]
+Get:31 http://archive.ubuntu.com/ubuntu xenial-backports/universe Translation-en [3,996 B]
+Fetched 24.7 MB in 4s (6,014 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be upgraded:
+  apt-transport-https
+1 upgraded, 0 newly installed, 0 to remove and 105 not upgraded.
+Need to get 26.1 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 apt-transport-https amd64 1.2.26 [26.1 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin:
+Fetched 26.1 kB in 0s (94.9 kB/s)
+(Reading database ... 69311 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_1.2.26_amd64.deb ...
+Unpacking apt-transport-https (1.2.26) over (1.2.25) ...
+Setting up apt-transport-https (1.2.26) ...
+Adding docker source and key
+OK
+Updating available packages
+Installing docker
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  bridge-utils cgroupfs-mount containerd runc ubuntu-fan
+Suggested packages:
+  mountall debootstrap docker-doc rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  aufs-tools bridge-utils cgroupfs-mount containerd docker.io runc ubuntu-fan
+0 upgraded, 7 newly installed, 0 to remove and 105 not upgraded.
+Need to get 17.6 MB of archives.
+After this operation, 90.7 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial/universe amd64 aufs-tools amd64 1:3.2+20130722-1.1ubuntu1 [92.9 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 bridge-utils amd64 1.5-9ubuntu1 [28.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial/universe amd64 cgroupfs-mount all 1.2 [4,970 B]
+Get:4 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 runc amd64 1.0.0~rc2+docker1.13.1-0ubuntu1~16.04.1 [1,488 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 containerd amd64 0.2.5-0ubuntu1~16.04.1 [4,041 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 docker.io amd64 1.13.1-0ubuntu1~16.04.2 [11.9 MB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 ubuntu-fan all 0.12.8~16.04.2 [35.6 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin:
+Fetched 17.6 MB in 1s (10.6 MB/s)
+Selecting previously unselected package aufs-tools.
+(Reading database ... 69311 files and directories currently installed.)
+Preparing to unpack .../aufs-tools_1%3a3.2+20130722-1.1ubuntu1_amd64.deb ...
+Unpacking aufs-tools (1:3.2+20130722-1.1ubuntu1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../bridge-utils_1.5-9ubuntu1_amd64.deb ...
+Unpacking bridge-utils (1.5-9ubuntu1) ...
+Selecting previously unselected package cgroupfs-mount.
+Preparing to unpack .../cgroupfs-mount_1.2_all.deb ...
+Unpacking cgroupfs-mount (1.2) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../runc_1.0.0~rc2+docker1.13.1-0ubuntu1~16.04.1_amd64.deb ...
+Unpacking runc (1.0.0~rc2+docker1.13.1-0ubuntu1~16.04.1) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../containerd_0.2.5-0ubuntu1~16.04.1_amd64.deb ...
+Unpacking containerd (0.2.5-0ubuntu1~16.04.1) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../docker.io_1.13.1-0ubuntu1~16.04.2_amd64.deb ...
+Unpacking docker.io (1.13.1-0ubuntu1~16.04.2) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../ubuntu-fan_0.12.8~16.04.2_all.deb ...
+Unpacking ubuntu-fan (0.12.8~16.04.2) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+ureadahead will be reprofiled on next reboot
+Processing triggers for systemd (229-4ubuntu21.1) ...
+Setting up aufs-tools (1:3.2+20130722-1.1ubuntu1) ...
+Setting up bridge-utils (1.5-9ubuntu1) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+Setting up cgroupfs-mount (1.2) ...
+Setting up runc (1.0.0~rc2+docker1.13.1-0ubuntu1~16.04.1) ...
+Setting up containerd (0.2.5-0ubuntu1~16.04.1) ...
+Setting up docker.io (1.13.1-0ubuntu1~16.04.2) ...
+Adding group `docker' (GID 117) ...
+Done.
+Setting up ubuntu-fan (0.12.8~16.04.2) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for systemd (229-4ubuntu21.1) ...
+Processing triggers for ureadahead (0.100.0-19) ...
+Checking that docker is running
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+Installing sshpass, python-requests and xorriso
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libburn4 libisoburn1 libisofs6 libjte1 python-cffi-backend python-chardet
+  python-cryptography python-enum34 python-idna python-ipaddress
+  python-ndg-httpsclient python-openssl python-pkg-resources python-pyasn1
+  python-six python-urllib3
+Suggested packages:
+  python-cryptography-doc python-cryptography-vectors python-enum34-doc
+  python-openssl-doc python-openssl-dbg python-setuptools doc-base python-ntlm
+  jigit cdck
+The following NEW packages will be installed:
+  libburn4 libisoburn1 libisofs6 libjte1 python-cffi-backend python-chardet
+  python-cryptography python-enum34 python-idna python-ipaddress
+  python-ndg-httpsclient python-openssl python-pkg-resources python-pyasn1
+  python-requests python-six python-urllib3 sshpass xorriso
+0 upgraded, 19 newly installed, 0 to remove and 105 not upgraded.
+Need to get 1,811 kB of archives.
+After this operation, 6,994 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial/universe amd64 libburn4 amd64 1.4.2.pl01-1 [145 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libjte1 amd64 1.20-2ubuntu1 [25.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial/universe amd64 libisofs6 amd64 1.4.2-2 [185 kB]
+Get:4 http://archive.ubuntu.com/ubuntu xenial/universe amd64 libisoburn1 amd64 1.4.2-4ubuntu1 [355 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-cffi-backend amd64 1.5.2-1ubuntu1 [58.1 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-pkg-resources all 20.7.0-1 [108 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-chardet all 2.3.0-2 [96.3 kB]
+Get:8 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-enum34 all 1.1.2-1 [35.8 kB]
+Get:9 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-idna all 2.0-3 [35.1 kB]
+Get:10 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-ipaddress all 1.0.16-1 [18.0 kB]
+Get:11 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-pyasn1 all 0.1.9-1 [45.1 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-six all 1.10.0-3 [10.9 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-cryptography amd64 1.2.3-1ubuntu0.1 [199 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-openssl all 0.15.1-2build1 [84.1 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-ndg-httpsclient all 0.4.0-3 [25.1 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-urllib3 all 1.13.1-2ubuntu0.16.04.1 [57.2 kB]
+Get:17 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-requests all 2.9.1-3 [55.6 kB]
+Get:18 http://archive.ubuntu.com/ubuntu xenial/universe amd64 xorriso amd64 1.4.2-4ubuntu1 [262 kB]
+Get:19 http://archive.ubuntu.com/ubuntu xenial/universe amd64 sshpass amd64 1.05-1 [10.5 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin:
+Fetched 1,811 kB in 0s (1,831 kB/s)
+Selecting previously unselected package libburn4:amd64.
+(Reading database ... 69558 files and directories currently installed.)
+Preparing to unpack .../libburn4_1.4.2.pl01-1_amd64.deb ...
+Unpacking libburn4:amd64 (1.4.2.pl01-1) ...
+Selecting previously unselected package libjte1:amd64.
+Preparing to unpack .../libjte1_1.20-2ubuntu1_amd64.deb ...
+Unpacking libjte1:amd64 (1.20-2ubuntu1) ...
+Selecting previously unselected package libisofs6:amd64.
+Preparing to unpack .../libisofs6_1.4.2-2_amd64.deb ...
+Unpacking libisofs6:amd64 (1.4.2-2) ...
+Selecting previously unselected package libisoburn1:amd64.
+Preparing to unpack .../libisoburn1_1.4.2-4ubuntu1_amd64.deb ...
+Unpacking libisoburn1:amd64 (1.4.2-4ubuntu1) ...
+Selecting previously unselected package python-cffi-backend.
+Preparing to unpack .../python-cffi-backend_1.5.2-1ubuntu1_amd64.deb ...
+Unpacking python-cffi-backend (1.5.2-1ubuntu1) ...
+Selecting previously unselected package python-pkg-resources.
+Preparing to unpack .../python-pkg-resources_20.7.0-1_all.deb ...
+Unpacking python-pkg-resources (20.7.0-1) ...
+Selecting previously unselected package python-chardet.
+Preparing to unpack .../python-chardet_2.3.0-2_all.deb ...
+Unpacking python-chardet (2.3.0-2) ...
+Selecting previously unselected package python-enum34.
+Preparing to unpack .../python-enum34_1.1.2-1_all.deb ...
+Unpacking python-enum34 (1.1.2-1) ...
+Selecting previously unselected package python-idna.
+Preparing to unpack .../python-idna_2.0-3_all.deb ...
+Unpacking python-idna (2.0-3) ...
+Selecting previously unselected package python-ipaddress.
+Preparing to unpack .../python-ipaddress_1.0.16-1_all.deb ...
+Unpacking python-ipaddress (1.0.16-1) ...
+Selecting previously unselected package python-pyasn1.
+Preparing to unpack .../python-pyasn1_0.1.9-1_all.deb ...
+Unpacking python-pyasn1 (0.1.9-1) ...
+Selecting previously unselected package python-six.
+Preparing to unpack .../python-six_1.10.0-3_all.deb ...
+Unpacking python-six (1.10.0-3) ...
+Selecting previously unselected package python-cryptography.
+Preparing to unpack .../python-cryptography_1.2.3-1ubuntu0.1_amd64.deb ...
+Unpacking python-cryptography (1.2.3-1ubuntu0.1) ...
+Selecting previously unselected package python-openssl.
+Preparing to unpack .../python-openssl_0.15.1-2build1_all.deb ...
+Unpacking python-openssl (0.15.1-2build1) ...
+Selecting previously unselected package python-ndg-httpsclient.
+Preparing to unpack .../python-ndg-httpsclient_0.4.0-3_all.deb ...
+Unpacking python-ndg-httpsclient (0.4.0-3) ...
+Selecting previously unselected package python-urllib3.
+Preparing to unpack .../python-urllib3_1.13.1-2ubuntu0.16.04.1_all.deb ...
+Unpacking python-urllib3 (1.13.1-2ubuntu0.16.04.1) ...
+Selecting previously unselected package python-requests.
+Preparing to unpack .../python-requests_2.9.1-3_all.deb ...
+Unpacking python-requests (2.9.1-3) ...
+Selecting previously unselected package xorriso.
+Preparing to unpack .../xorriso_1.4.2-4ubuntu1_amd64.deb ...
+Unpacking xorriso (1.4.2-4ubuntu1) ...
+Selecting previously unselected package sshpass.
+Preparing to unpack .../sshpass_1.05-1_amd64.deb ...
+Unpacking sshpass (1.05-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for install-info (6.1.0.dfsg.1-5) ...
+Setting up libburn4:amd64 (1.4.2.pl01-1) ...
+Setting up libjte1:amd64 (1.20-2ubuntu1) ...
+Setting up libisofs6:amd64 (1.4.2-2) ...
+Setting up libisoburn1:amd64 (1.4.2-4ubuntu1) ...
+Setting up python-cffi-backend (1.5.2-1ubuntu1) ...
+Setting up python-pkg-resources (20.7.0-1) ...
+Setting up python-chardet (2.3.0-2) ...
+Setting up python-enum34 (1.1.2-1) ...
+Setting up python-idna (2.0-3) ...
+Setting up python-ipaddress (1.0.16-1) ...
+Setting up python-pyasn1 (0.1.9-1) ...
+Setting up python-six (1.10.0-3) ...
+Setting up python-cryptography (1.2.3-1ubuntu0.1) ...
+Setting up python-openssl (0.15.1-2build1) ...
+Setting up python-ndg-httpsclient (0.4.0-3) ...
+Setting up python-urllib3 (1.13.1-2ubuntu0.16.04.1) ...
+Setting up python-requests (2.9.1-3) ...
+Setting up xorriso (1.4.2-4ubuntu1) ...
+Setting up sshpass (1.05-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+SUCCESS:  Completed bare metal install of regional server [aknode44] at Mon Jul 2 20:09:35 UTC 2018
+SUCCESS:  Try connecting with 'ssh root@192.168.2.42' as user root
+Elapsed time was 9 minutes and 22 seconds
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# ^C
+root@csonjrsv44:/opt/akraino# git clone http://gerrit.att-akraino.org/regional_controller.git /opt/akraino/region
+fatal: destination path '/opt/akraino/region' already exists and is not an empty directory.
+root@csonjrsv44:/opt/akraino# cd region/
+root@csonjrsv44:/opt/akraino/region# ls
+README  start_akraino_portal.sh
+root@csonjrsv44:/opt/akraino/region# source ~/.bashrc
+root@csonjrsv44:/opt/akraino/region# ls
+README  start_akraino_portal.sh
+root@csonjrsv44:/opt/akraino/region# cd ..
+root@csonjrsv44:/opt/akraino# ls
+akrino_airship_deploy.sh  dell  dhcp  ipxe  redfish  region  server-build  server-config  tools  www
+root@csonjrsv44:/opt/akraino# ls -al
+total 52
+drwxr-xr-x 11 root root 4096 Jun 29 23:30 .
+drwxr-xr-x 10 root root 4096 Jul  2 14:34 ..
+-rw-r--r--  1 root root  364 Jun 29 23:03 .akrainorc
+-rwxr-xr-x  1 root root 1311 Jun 27 17:38 akrino_airship_deploy.sh
+drwxr-xr-x  5 root root 4096 Jun 29 13:05 dell
+drwxr-xr-x  2 root root 4096 Jul  2 19:52 dhcp
+drwxr-xr-x  5 root root 4096 Jun 29 23:12 ipxe
+drwxr-xr-x  3 root root 4096 Jul  2 03:35 redfish
+drwxr-xr-x  3 root root 4096 Jun 30 00:30 region
+drwxrwxrwx  2 root root 4096 Jun 29 14:04 server-build
+drwxr-xr-x  2 root root 4096 Jul  2 20:00 server-config
+drwxr-xr-x  3 root root 4096 Jun 30 01:00 tools
+drwxr-xr-x  3 root root 4096 Jul  2 19:52 www
+root@csonjrsv44:/opt/akraino# source .akrainorc
+root@csonjrsv44:/opt/akraino# scp /opt/akraino/region/start_akraino_portal.sh root@$TARGET_SERVER_IP:/tmp/
+start_akraino_portal.sh                                                                                                                   100% 7925     7.7KB/s   00:00
+root@csonjrsv44:/opt/akraino# ssh root@$TARGET_SERVER_IP "bash /tmp/start_akraino_portal.sh \
+> $DB_SCHEMA_VERSION $CAMUNDA_WORKFLOW_VERSION $PORTAL_VERSION"
+Login Succeeded
+Unable to find image 'nexus3.att-akraino.org:10001/akraino_schema_db:1.0.0-201806260417' locally
+1.0.0-201806260417: Pulling from akraino_schema_db
+f2aa67a397c4: Pulling fs layer
+3f47e9dfd161: Pulling fs layer
+365e1eb16a96: Pulling fs layer
+c537ee5f45d2: Pulling fs layer
+52e33f5a09fb: Pulling fs layer
+e48edfb2fccd: Pulling fs layer
+e2ea3d468f97: Pulling fs layer
+cf6364e94865: Pulling fs layer
+569647c08bf4: Pulling fs layer
+9c69a6097701: Pulling fs layer
+87daa615c80e: Pulling fs layer
+53c1d7535b9c: Pulling fs layer
+e48455780eb9: Pulling fs layer
+c84d8cb7b118: Pulling fs layer
+d9f539dd3eef: Pulling fs layer
+9de71394ecd2: Pulling fs layer
+3667a5a4e7c3: Pulling fs layer
+9c69a6097701: Waiting
+87daa615c80e: Waiting
+c537ee5f45d2: Waiting
+53c1d7535b9c: Waiting
+cf6364e94865: Waiting
+e48455780eb9: Waiting
+c84d8cb7b118: Waiting
+569647c08bf4: Waiting
+e48edfb2fccd: Waiting
+3667a5a4e7c3: Waiting
+9de71394ecd2: Waiting
+e2ea3d468f97: Waiting
+52e33f5a09fb: Waiting
+d9f539dd3eef: Waiting
+365e1eb16a96: Download complete
+3f47e9dfd161: Verifying Checksum
+3f47e9dfd161: Download complete
+c537ee5f45d2: Verifying Checksum
+c537ee5f45d2: Download complete
+52e33f5a09fb: Verifying Checksum
+52e33f5a09fb: Download complete
+e2ea3d468f97: Download complete
+cf6364e94865: Verifying Checksum
+cf6364e94865: Download complete
+e48edfb2fccd: Verifying Checksum
+e48edfb2fccd: Download complete
+9c69a6097701: Verifying Checksum
+9c69a6097701: Download complete
+f2aa67a397c4: Verifying Checksum
+f2aa67a397c4: Download complete
+87daa615c80e: Verifying Checksum
+87daa615c80e: Download complete
+53c1d7535b9c: Verifying Checksum
+e48455780eb9: Download complete
+c84d8cb7b118: Verifying Checksum
+c84d8cb7b118: Download complete
+d9f539dd3eef: Download complete
+3667a5a4e7c3: Verifying Checksum
+3667a5a4e7c3: Download complete
+9de71394ecd2: Verifying Checksum
+9de71394ecd2: Download complete
+f2aa67a397c4: Pull complete
+569647c08bf4: Verifying Checksum
+569647c08bf4: Download complete
+3f47e9dfd161: Pull complete
+365e1eb16a96: Pull complete
+c537ee5f45d2: Pull complete
+52e33f5a09fb: Pull complete
+e48edfb2fccd: Pull complete
+e2ea3d468f97: Pull complete
+cf6364e94865: Pull complete
+569647c08bf4: Pull complete
+9c69a6097701: Pull complete
+87daa615c80e: Pull complete
+53c1d7535b9c: Pull complete
+e48455780eb9: Pull complete
+c84d8cb7b118: Pull complete
+d9f539dd3eef: Pull complete
+9de71394ecd2: Pull complete
+3667a5a4e7c3: Pull complete
+Digest: sha256:343e45009710168b6c6a91b54ba9743cca5342931f20d169698871b63d3a6df6
+Status: Downloaded newer image for nexus3.att-akraino.org:10001/akraino_schema_db:1.0.0-201806260417
+7a58f0e6fa359e1c14a4ca4e66e62d16a6e2839007e77a4324d331bd228a6d77
+Unable to find image 'nexus3.att-akraino.org:10001/akrainoldap:1.0' locally
+1.0: Pulling from akrainoldap
+517d36521d87: Pulling fs layer
+bda917aee34d: Pulling fs layer
+6d3a50e28bc3: Pulling fs layer
+827f66ec0036: Pulling fs layer
+2383fa7d7f43: Pulling fs layer
+827f66ec0036: Waiting
+2383fa7d7f43: Waiting
+bda917aee34d: Verifying Checksum
+bda917aee34d: Download complete
+6d3a50e28bc3: Download complete
+2383fa7d7f43: Download complete
+517d36521d87: Verifying Checksum
+517d36521d87: Download complete
+827f66ec0036: Verifying Checksum
+827f66ec0036: Download complete
+517d36521d87: Pull complete
+bda917aee34d: Pull complete
+6d3a50e28bc3: Pull complete
+827f66ec0036: Pull complete
+2383fa7d7f43: Pull complete
+Digest: sha256:a0b56ad680c930388948731746054c65e68b7afb3cee21320d860afb2907dc16
+Status: Downloaded newer image for nexus3.att-akraino.org:10001/akrainoldap:1.0
+ac8a3c7ebb19146a79d455cf5f1800557ebb39d640fe3862e196523a6c33b726
+CREATE SCHEMA
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+psql:/akraino-db_0524.sql:174: ERROR:  invalid input syntax for type bytea
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+COMMIT
+psql:/akraino-db_0524.sql:196: WARNING:  there is no transaction in progress
+Unable to find image 'nexus3.att-akraino.org:10001/akraino-camunda-workflow-engine:1.0.0' locally
+1.0.0: Pulling from akraino-camunda-workflow-engine
+7448db3b31eb: Pulling fs layer
+c36604fa7939: Pulling fs layer
+29e8ef0e3340: Pulling fs layer
+a0c934d2565d: Pulling fs layer
+a360a17c9cab: Pulling fs layer
+cfcc996af805: Pulling fs layer
+a0c934d2565d: Waiting
+2cf014724202: Pulling fs layer
+a360a17c9cab: Waiting
+4bc402a00dfe: Pulling fs layer
+8ec33bf239ed: Pulling fs layer
+2cf014724202: Waiting
+47cafa0444a1: Pulling fs layer
+4bc402a00dfe: Waiting
+8ec33bf239ed: Waiting
+c36604fa7939: Verifying Checksum
+c36604fa7939: Download complete
+a0c934d2565d: Download complete
+a360a17c9cab: Download complete
+cfcc996af805: Verifying Checksum
+cfcc996af805: Download complete
+7448db3b31eb: Verifying Checksum
+7448db3b31eb: Download complete
+4bc402a00dfe: Download complete
+8ec33bf239ed: Verifying Checksum
+8ec33bf239ed: Download complete
+29e8ef0e3340: Verifying Checksum
+29e8ef0e3340: Download complete
+47cafa0444a1: Verifying Checksum
+47cafa0444a1: Download complete
+7448db3b31eb: Pull complete
+2cf014724202: Verifying Checksum
+2cf014724202: Download complete
+c36604fa7939: Pull complete
+29e8ef0e3340: Pull complete
+a0c934d2565d: Pull complete
+a360a17c9cab: Pull complete
+cfcc996af805: Pull complete
+2cf014724202: Pull complete
+4bc402a00dfe: Pull complete
+8ec33bf239ed: Pull complete
+47cafa0444a1: Pull complete
+Digest: sha256:cdab3f64944c251ee0666419f2b75e1b6970eb22be37063c9ba46fc91ca019ff
+Status: Downloaded newer image for nexus3.att-akraino.org:10001/akraino-camunda-workflow-engine:1.0.0
+078afc823cf4631a5a195113d215455531e401e46f92746965dcc31c61723d2a
+Unable to find image 'nexus3.att-akraino.org:10001/akraino-portal:5.0' locally
+5.0: Pulling from akraino-portal
+cc1a78bfd46b: Pulling fs layer
+d2c05365ee2a: Pulling fs layer
+231cb0e216d3: Pulling fs layer
+b6ea00fc4d8e: Pulling fs layer
+51e8cdd02bb8: Pulling fs layer
+d2be3a3005a9: Pulling fs layer
+0111eaf8dfa4: Pulling fs layer
+5c59181d9b49: Pulling fs layer
+31f66988cc08: Pulling fs layer
+dee57563109f: Pulling fs layer
+02bd7f9c0e2d: Pulling fs layer
+dee57563109f: Waiting
+6dffff83a3ac: Pulling fs layer
+b6ea00fc4d8e: Waiting
+074da101a3de: Pulling fs layer
+6dffff83a3ac: Waiting
+5c59181d9b49: Waiting
+51e8cdd02bb8: Waiting
+31f66988cc08: Waiting
+0111eaf8dfa4: Waiting
+40ac370a7d31: Pulling fs layer
+074da101a3de: Waiting
+40ac370a7d31: Waiting
+231cb0e216d3: Verifying Checksum
+231cb0e216d3: Download complete
+b6ea00fc4d8e: Verifying Checksum
+b6ea00fc4d8e: Download complete
+51e8cdd02bb8: Verifying Checksum
+51e8cdd02bb8: Download complete
+d2be3a3005a9: Verifying Checksum
+d2be3a3005a9: Download complete
+d2c05365ee2a: Download complete
+5c59181d9b49: Download complete
+31f66988cc08: Verifying Checksum
+31f66988cc08: Download complete
+cc1a78bfd46b: Verifying Checksum
+cc1a78bfd46b: Download complete
+dee57563109f: Verifying Checksum
+dee57563109f: Download complete
+074da101a3de: Download complete
+02bd7f9c0e2d: Verifying Checksum
+02bd7f9c0e2d: Download complete
+40ac370a7d31: Verifying Checksum
+40ac370a7d31: Download complete
+cc1a78bfd46b: Pull complete
+d2c05365ee2a: Pull complete
+231cb0e216d3: Pull complete
+b6ea00fc4d8e: Pull complete
+51e8cdd02bb8: Pull complete
+d2be3a3005a9: Pull complete
+0111eaf8dfa4: Verifying Checksum
+0111eaf8dfa4: Download complete
+0111eaf8dfa4: Pull complete
+5c59181d9b49: Pull complete
+31f66988cc08: Pull complete
+dee57563109f: Pull complete
+02bd7f9c0e2d: Pull complete
+6dffff83a3ac: Pull complete
+074da101a3de: Pull complete
+40ac370a7d31: Pull complete
+Digest: sha256:c756449bb42ff1ed53fb7ea77708554daf539143666969610689b245ab2b0d2a
+Status: Downloaded newer image for nexus3.att-akraino.org:10001/akraino-portal:5.0
+d6ebcdb4d760d57e5f1e4ac52e48ba636ca0bacfdd43b4045545fcfc51d0ca36
+Setting up tempest repository
+Setting up yaml builds repository
+Setting up ONAP repository
+tar: This does not look like a tar archive
+tar: Exiting with failure status due to previous errors
+Setting up sample vnf repository
+Setting up airshipinabottle repository
+SUCCESS:  Portal install completed
