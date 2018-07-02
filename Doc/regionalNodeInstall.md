@@ -14,7 +14,7 @@ There are 3 main steps involved in this installation of regional node: (1) OS in
 	3. Akraino Web Portal
 	4. LDAP configuration 
 
-+ (3) Components staged on the Regional controller, so they are available once a site is built:
++ (3) Components staged on the Regional controller, so that they are available once a site is built:
 	1. Tempest 
 	2. Yaml builds 
 	3. ONAP
