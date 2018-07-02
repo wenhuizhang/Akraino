@@ -174,7 +174,7 @@ $ source /opt/akraino/.akrainorc
 Clone the Redfish Bootstrapping Scripts as part of Akraino tools. 
 
 ```
-$ git clone http://gerrit.att-akraino.org/redfish.git /opt/akraino/tools
+$ git clone https://gerrit.akraino.org/r/redfish /opt/akraino/tools
 ```
 
 ## 4. Configure and Compile
@@ -301,7 +301,7 @@ Elapsed time was 9 minutes and 22 seconds
 Clone scripts to build your region node to your workspace. 
 
 ```
-$ git clone http://gerrit.att-akraino.org/regional_controller.git /opt/akraino/region
+$ git clone https://gerrit.akraino.org/r/regional_controller /opt/akraino/region
 ```
 
 Then copy portal build scripts to iDRAC. 
