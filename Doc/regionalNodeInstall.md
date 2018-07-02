@@ -276,16 +276,17 @@ If you see something as below, you are good to go.
 
 ```
 $ /opt/akraino/tools/install_server_os.sh --rc /opt/akraino/server-config/aknode42rc --no-confirm
-Beginning /opt/akraino/tools/install_server_os.sh as user [root] in pwd [/opt/akraino] with home [/root]
+Beginning /opt/akraino/tools/install_server_os.sh as user [root] in pwd [/opt/akraino/server-config] with home [/root]
 Tools are ready in [/opt/akraino]
-WARNING:  Preparing to build server [aknode42] using oob ip [192.168.41.42].  Beginning in 10 seconds ..........
-Beginning bare metal install of os at Fri Jun 29 23:12:26 UTC 2018
+WARNING:  Preparing to build server [aknode44] using oob ip [192.168.41.42].  Beginning in 10 seconds ..........
+Beginning bare metal install of os at Mon Jul 2 18:57:32 UTC 2018
 
 ...
 
-SUCCESS:  Completed bare metal install of regional server [aknode42] at ...
+Processing triggers for libc-bin (2.23-0ubuntu10) ...
+SUCCESS:  Completed bare metal install of regional server [aknode44] at Mon Jul 2 20:09:35 UTC 2018
 SUCCESS:  Try connecting with 'ssh root@192.168.2.42' as user root
-Elapsed time was 10 minutes and 31 seconds
+Elapsed time was 9 minutes and 22 seconds
 ```
 
 
