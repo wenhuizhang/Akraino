@@ -276,9 +276,11 @@ If you see something as below, you are good to go.
 
 ```
 $ /opt/akraino/tools/install_server_os.sh --rc /opt/akraino/server-config/aknode42rc --no-confirm
-Beginning /opt/akraino/tools/install_server_os.sh as user [root] in pwd [/opt/akraino/server-config] with home [/root]
+Beginning /opt/akraino/tools/install_server_os.sh as user [root] 
+in pwd [/opt/akraino/server-config] with home [/root]
 Tools are ready in [/opt/akraino]
-WARNING:  Preparing to build server [aknode44] using oob ip [192.168.41.42].  Beginning in 10 seconds ..........
+WARNING:  Preparing to build server [aknode44] using oob ip [192.168.41.42].  
+Beginning in 10 seconds ..........
 Beginning bare metal install of os at Mon Jul 2 18:57:32 UTC 2018
 
 ...
