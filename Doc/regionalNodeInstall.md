@@ -2,51 +2,23 @@
 
 This guide helps you build and install Regional Node of Akraino Stack.
 
-There are 3 main steps involved in this installation of regional node: (1) OS install; (2) portal install; (3) preparation of installation files for Edge Node building steps of Akraino Stack. 
+There are 3 main steps involved in this installation of regional node: (1) OS installation; (2) portal installation; (3) staging files on regional node. 
 
-OS Install
-•	Redfish iDRAC Bootstrapping  - Performs hardware configuration
-•	Linux OS Installation - Installs Ubuntu
++ OS Install
+	1. Redfish iDRAC Bootstrapping  - Performs hardware configuration
+	2. Linux OS Installation - Installs Ubuntu
 
-Portal Install
-•	PostgreSQL DB
-•	Camunda Workflow and Decision Engine
-•	Akraino Web Portal
-•	LDAP configuration - Not sure that  we use ldap... I didn’t see a docker container for it.  Narender or the portal team would need to clarify.
++ Portal Install
+	1. PostgreSQL DB
+	2. Camunda Workflow and Decision Engine
+	3. Akraino Web Portal
+	4. LDAP configuration 
 
-These components are staged on the Regional controller so they are available once a site is built:
-•	Tempest 
-•	Yaml builds 
-•	ONAP
-•	Sample VNFs
-
-
-
-There are 3 parts of components involved in this installation of regional node. 
-
-1) Redfish iDRAC Bootstrapping 
-
-2) Camunda Workflow and Decision Engine
-
-3) Linux OS Installation 
-
-4) OpenStack-Ocata
-
-5) PostgreSQL DB
-
-6) LDAP configuration
-
-It also downloads portal files:
-
-7) Tempest 
-
-8) Yaml builds 
-
-9) ONAP
-
-10) Sample VNFs 
-
-11) Airship in a bottle tar file
++ Components staged on the Regional controller, so they are available once a site is built:
+	1. Tempest 
+	2. Yaml builds 
+	3. ONAP
+	4. Sample VNFs
 
 
 This installation will walk you through the steps of installation of a `Bare metal server` through `Build server`.
