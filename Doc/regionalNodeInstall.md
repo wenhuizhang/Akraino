@@ -181,7 +181,7 @@ In this step, you will create a server configuration from a template.
 
 The template is stored in `/opt/akraino/server-config`. 
 
-In the steps below, please change **aknode42rc** ( `/opt/arkaino/server-config/aknode41rc` )
+In the steps below, please change **aknode42rc** ( `/opt/arkaino/server-config/aknode42rc` )
 into the `bare metal server name` you are setting up with. 
 
 ```
