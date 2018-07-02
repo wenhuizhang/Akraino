@@ -27,14 +27,14 @@ It also downloads portal files:
 
 This installation will walk you through the steps of installation of a `Bare metal server` through `Build server`.
 
-#### To create a regional controller requires two servers:
+#### To create a regional controller, it requires two servers:
 
-1)	Build server - any server or VM with Ubuntu installed;
+1) Build server - any server or VM with Ubuntu installed;
 
-2)	Bare metal server - Dell server with no OS installed.
+2) Bare metal server - Dell server with no OS installed.
 
 
-#### The Build Server has the following requirements:
+#### The Build Server, it has the following requirements:
 
 1) Ubuntu 16.04.1;
 
@@ -43,7 +43,7 @@ This installation will walk you through the steps of installation of a `Bare met
 3) Packages of sshpass, xorriso and python-requests. 
 
 
-#### The Bare Metal server  has the following requirements:
+#### The Bare Metal server has the following requirements:
 
 1) Dell PowerEdge R740 server;
 	
@@ -53,7 +53,7 @@ This installation will walk you through the steps of installation of a `Bare met
 
 #### The network requirements are:
 
-1)	The Build server must have connectivity to the Bare Metal server iDRAC interface;
+1) The Build server must have connectivity to the Bare Metal server iDRAC interface;
 	
 2) The Build server must have connectivity to the Bare Metal server primary network;
 	
@@ -63,7 +63,7 @@ primary network interface to the Build server.
 
 
 
-This installation uses Node 42 and Node 44 as an example for walking through steps of installation. 
+This installation guide uses Node 42 and Node 44 as an example, to walk you through steps of installation. 
 ```
 Node 42 is a Bare Metal Server. 
 Node 44 is a Linux Server with Container.
@@ -75,7 +75,7 @@ Node 44 is a Linux Server with Container.
 
 ### 1.1 Check OS version on Linux Server
 
-Check what OS is on Linux Server, a `Ubuntu 16.04.1` is required.
+Check what Operating System(OS) is on Linux Server, a `Ubuntu 16.04.1` is required.
 ```
 $ uname -rsv
 Linux 4.13.0-45-generic #50~16.04.1-Ubuntu SMP Wed May 30 11:18:27 UTC 2018
@@ -84,7 +84,7 @@ Linux 4.13.0-45-generic #50~16.04.1-Ubuntu SMP Wed May 30 11:18:27 UTC 2018
 
 ### 1.2 Check Docker version on Linux Server
 
-Check what Docker version it is, a version of 1.13.1 or higher is required. 
+Check what Docker version it is, a version of `1.13.1 or higher` is required. 
 
 ```
 $ docker --version
@@ -94,7 +94,7 @@ Docker version 1.13.1, build 092cba3
 ### 1.3 Check the Packages
 
 Check what versions are there for packages of sshpass, xorriso and python-requests. 
-We are requiring python version of 2.7.12. 
+It requires python version of 2.7.12. 
 
 ```
 $ sudo apt install sshpass xorriso python-requests
@@ -110,7 +110,7 @@ xorriso is already the newest version (1.4.2-4ubuntu1).
 
 ### 1.4 Check Network Setup
 
-1)	The Build server must have connectivity to the Bare Metal server iDRAC interface;
+1) The Build server must have connectivity to the Bare Metal server iDRAC interface;
 	
 2) The Build server must have connectivity to the Bare Metal server primary network;
 	
