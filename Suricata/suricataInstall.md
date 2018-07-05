@@ -10,8 +10,8 @@ $ sudo apt-get install wget libnetfilter-queue-dev libnetfilter-queue1 libnfnetl
 2. Download the source 
 
 ```
-$ wget https://www.openinfosecfoundation.org/download/suricata-3.1.2.tar.gz
-$ tar -xvf suricata-3.1.2.tar.gz
+$ wget https://www.openinfosecfoundation.org/download/suricata-4.0.4.tar.gz
+$ tar -xvf suricata-4.0.4.tar.gz
 ```
 
 3. Configure 
