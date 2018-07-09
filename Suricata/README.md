@@ -4,6 +4,9 @@
 
 ```
 $ sudo apt-get install wget libnetfilter-queue-dev libnetfilter-queue1 libnfnetlink-dev pkg-config libmagic-dev build-essential libpcre3-dev libpcre3-dbg automake autoconf libtool libpcap-dev libnet1-dev libyaml-dev zlib1g-dev libcap-ng-dev libjansson-dev
+
+$ sudo apt-get install apache2 php5 mysql-server php5-mysql
+
 ```
 
 
@@ -54,7 +57,7 @@ $ sudo /usr/local/bin/suricata --list-runmodes
 Execute
 
 ```
-$ sudo /usr/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
+$ sudo /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
 ```
 
 6. Check log files 
