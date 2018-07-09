@@ -68,4 +68,22 @@ $ tail -f /var/log/suricata/fast.log
 $ tail -f /var/log/suricata/eve.json
 ```
 
+7. Check Deps
+
+Check libraries in binary used for suricata in runtime. 
+
+```
+$ mkdir out
+
+$ sudo strace -ttff -o ./out/ /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
+
+$ cd out
+
+$ grep ./ exec
+
+$ grep ./ fork
+```
+
+
+
 
