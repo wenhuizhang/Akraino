@@ -17,7 +17,7 @@ $ tar -xvf suricata-4.0.4.tar.gz
 3. Configure 
 
 ```
-$ cd suricata-3.1.2
+$ cd suricata-4.0.4
 $ ./configure --sysconfdir=/etc --localstatedir=/var
 ```
 
