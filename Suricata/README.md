@@ -77,7 +77,7 @@ $ mkdir out
 
 $ cd out
 
-# strace -ttff -o ./out/ /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
+# strace -ttff -o log /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
 
 $ grep ./ exec
 
