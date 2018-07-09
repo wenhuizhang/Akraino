@@ -75,9 +75,9 @@ Check libraries in binary used for suricata in runtime.
 ```
 $ mkdir out
 
-$ sudo strace -ttff -o ./out/ /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
-
 $ cd out
+
+# strace -ttff -o ./out/ /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
 
 $ grep ./ exec
 
