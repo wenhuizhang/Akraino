@@ -79,9 +79,13 @@ $ cd out
 
 # strace -ttff -o log /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
 
-$ grep ./ exec
+$ cat log.* > merge.txt
 
-$ grep ./ fork
+$ cat merge.txt | grep exec
+
+$ cat merge.txt | grep fork
+
+$ cat merge.txt | grep open
 ```
 
 
