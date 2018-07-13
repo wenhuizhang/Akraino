@@ -34,6 +34,8 @@ The configuration of rules is located at `/etc/suricata/rules ` .
 
 The binary of suricata is located at `/usr/bin/suricata`.
 
+Previous versions might be located at `/usr/local/bin/suricata`
+
 
 5. Configuration of IDS
 
@@ -48,7 +50,7 @@ $ sudo ethtool -K eth0 gro off lro off
 Check modes available
 
 ```
-$ sudo /usr/local/bin/suricata --list-runmodes
+$ sudo /usr/bin/suricata --list-runmodes
 ```
 
 Execute
