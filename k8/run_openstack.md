@@ -1,3 +1,8 @@
+Here is a first pass at the heat template for serverless.  It will create three VMs and install kubernettes 1.9.x.  In the master (iot-k8s-1 by default) there is a setup_master.sh and setup_master.log that shows the results.  You can override any of the parameters by adding --parameter key=value to the heat create command, but below are the defaults.  Let me know if you have any issues.  I will have intermittent coverage for the next few days 404-372-0378.
+
+David Plunkett
+
+```
 
 | parameters            | NetID: public-47                                                                                                                                |
 |                       | k8_flavor: x1.large                                                                                                                             |
@@ -8,7 +13,7 @@
 |                       | k8_network_cidr: 10.100.0.0/16                                                                                                                  |
 |                       | k8_passwd: Serverless123                                                                                                                        |
 
-
+```
 
 
 root@akraino43:~# ./run_openstack_cli.sh stack create -t ./serverless.yaml serverless-demo
