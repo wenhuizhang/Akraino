@@ -8,13 +8,9 @@ We use 5 VMs for this test.
 IP | Type | Docker | OS
 ------------ | ------------- |------------ | ------------- 
 192.168.1.61 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
-
 192.168.1.62 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
-
 192.168.1.63 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
-
 192.168.1.64 | node | 18.03.0-ce | ubuntu 16.04
-
 192.168.1.65 | node | 18.03.0-ce | ubuntu 16.04
 
 
