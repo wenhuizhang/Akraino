@@ -1,3 +1,5 @@
+
+
 # Docker Commands 
 
 ## 1. Boot a docker
@@ -61,3 +63,11 @@ In the case of aufs:
 `/var/lib/docker/repositories-aufs` is a JSON file containing local image information. 
 
 This can be viewed with the command docker images.
+
+## 5. Build Images:
+```
+$ docker build -t wenhuizhang/suricata:v0  .
+
+$ docker run -it --rm wenhuizhang/suricata:v0 bash
+```
+
