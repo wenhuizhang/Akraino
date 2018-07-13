@@ -7,29 +7,31 @@ We use 5 VMs for this test.
 
 IP | Type | Docker | OS
 ------------ | ------------- |------------ | ------------- 
-192.168.1.61 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
-192.168.1.62 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
-192.168.1.63 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
-192.168.1.64 | node | 18.03.0-ce | ubuntu 16.04
-192.168.1.65 | node | 18.03.0-ce | ubuntu 16.04
+192.168.1.61 | master、node、etcd | 1.13.1 | ubuntu 16.04
+192.168.1.62 | master、node、etcd | 1.13.1 | ubuntu 16.04
+192.168.1.63 | master、node、etcd | 1.13.1 | ubuntu 16.04
+192.168.1.64 | node | 1.13.1 | ubuntu 16.04
+192.168.1.65 | node | 1.13.1 | ubuntu 16.04
+
+We follow the setup of `hyperkube + service`.
 
 
+## 2. Setup Etcd Cluster
 
-搭建前请看完整篇文章后再操作，一些变更说明我放到后面了；还有为了尽可能的懒，也不用什么 rpm、deb 了，直接 hyperkube + service 配置，布吉岛 hyperkube 的请看 GitHub；本篇文章基于一些小脚本搭建(懒)，所以不会写太详细的步骤，具体请参考 仓库脚本，如果想看更详细的每一步的作用可以参考以前的 1.7、1.8 的搭建文档
-二、搭建 Etcd 集群
+### 2.1 Install cfssl
+```
+$ wget https://mritdftp.b0.upaiyun.com/cfssl/cfssl.tar.gz
+$ tar -zxvf cfssl.tar.gz
+$ mv cfssl cfssljson /usr/local/bin
+$ chmod +x /usr/local/bin/cfssl /usr/local/bin/cfssljson
+$ rm -f cfssl.tar.gz
+```
 
-2.1、安装 cfssl
+### 2.2 Get Etcd Certificate 
 
-说实话这个章节我不想写，但是考虑可能有人真的需要，所以还是写了一下；这个安装脚本使用的是我私人的 cdn，文件可能随时删除，想使用最新版本请自行从 Github clone 并编译
-wget https://mritdftp.b0.upaiyun.com/cfssl/cfssl.tar.gz
-tar -zxvf cfssl.tar.gz
-mv cfssl cfssljson /usr/local/bin
-chmod +x /usr/local/bin/cfssl /usr/local/bin/cfssljson
-rm -f cfssl.tar.gz
-2.2、生成 Etcd 证书
+#### 2.2.1 etcd-csr.json
 
-etcd-csr.json
-
+```
 {
   "key": {
     "algo": "rsa",
@@ -53,8 +55,9 @@ etcd-csr.json
     "192.168.1.63"
   ]
 }
-etcd-gencert.json
-
+```
+#### 2.2.2 etcd-gencert.json
+```
 {
   "signing": {
     "default": {
@@ -68,8 +71,9 @@ etcd-gencert.json
     }
   }
 }
-etcd-root-ca-csr.json
-
+```
+#### 2.2.3 etcd-root-ca-csr.json
+```
 {
   "key": {
     "algo": "rsa",
@@ -86,17 +90,20 @@ etcd-root-ca-csr.json
   ],
   "CN": "etcd-root-ca"
 }
-生成证书
+```
+#### 2.2.4 Get Certificates
+```
+$ cfssl gencert --initca=true etcd-root-ca-csr.json | cfssljson --bare etcd-root-ca
+$ cfssl gencert --ca etcd-root-ca.pem --ca-key etcd-root-ca-key.pem --config etcd-gencert.json etcd-csr.json | cfssljson --bare etcd
+```
 
-cfssl gencert --initca=true etcd-root-ca-csr.json | cfssljson --bare etcd-root-ca
-cfssl gencert --ca etcd-root-ca.pem --ca-key etcd-root-ca-key.pem --config etcd-gencert.json etcd-csr.json | cfssljson --bare etcd
-生成后如下
 
-2.3、安装 Etcd
+### 2.3 Install Etcd
 
-Etcd 这里采用最新的 3.2.18 版本，安装方式直接复制二进制文件、systemd service 配置即可，不过需要注意相关用户权限问题，以下脚本配置等参考了 etcd rpm 安装包
-etcd.service
+Etcd with version of 3.2.18. We uses binaries and systemd service configurations here. 
 
+#### 2.3.1 etcd.service
+```
 [Unit]
 Description=Etcd Server
 After=network.target
@@ -216,12 +223,11 @@ download
 preinstall
 install
 postinstall
-脚本解释如下:
-download: 从 Github 下载二进制文件并解压
-preinstall: 为 Etcd 安装做准备，创建 etcd 用户，并指定家目录登录 shell 等
-install: 将 etcd 二进制文件复制到安装目录(/usr/local/bin)，复制 conf 目录到 /etc/etcd
-postinstall: 安装后收尾工作，比如检测 /var/lib/etcd 是否存在，纠正权限等
-整体目录结构如下
+
+```
+
+
+```
 etcd
 ├── conf
 │   ├── etcd.conf
@@ -237,24 +243,36 @@ etcd
 │       └── etcd-root-ca.pem
 ├── etcd.service
 └── install.sh
-请自行创建 conf 目录等，并放置好相关文件，保存上面脚本为 install.sh，直接执行即可；在每台机器上更改好对应的配置，如 etcd 名称等，etcd 估计都是轻车熟路了，这里不做过多阐述；安装后启动即可
-systemctl start etcd
-systemctl enable etcd
-注意: 集群 etcd 要 3 个一起启动，集群模式下单个启动会卡半天最后失败，不要傻等；启动成功后测试如下
-export ETCDCTL_API=3
-etcdctl --cacert=/etc/etcd/ssl/etcd-root-ca.pem --cert=/etc/etcd/ssl/etcd.pem --key=/etc/etcd/ssl/etcd-key.pem --endpoints=https://192.168.1.61:2379,https://192.168.1.62:2379,https://192.168.1.63:2379 endpoint health
 
-三、安装 Kubernets 集群组件
+```
+
+Then execute `install.sh`.
+
+```
+$ ./install.sh
+$ systemctl start etcd
+$ systemctl enable etcd
+```
+注意: 集群 etcd 要 3 个一起启动，集群模式下单个启动会卡半天最后失败，不要傻等；启动成功后测试如下
+```
+$ export ETCDCTL_API=3
+$ etcdctl --cacert=/etc/etcd/ssl/etcd-root-ca.pem --cert=/etc/etcd/ssl/etcd.pem --key=/etc/etcd/ssl/etcd-key.pem -- endpoints=https://192.168.1.61:2379,https://192.168.1.62:2379,https://192.168.1.63:2379 endpoint health
+```
+## 3 Install Kubernets Cluster
 
 注意：与以前文档不同的是，这次不依赖 rpm 等特定安装包，而是基于 hyperkube 二进制手动安装，每个节点都会同时安装 Master 与 Node 配置文件，具体作为 Master 还是 Node 取决于服务开启情况
-3.1、生成 Kubernetes 证书
+
+### 3.1、生成 Kubernetes 证书
 
 由于 kubelet 和 kube-proxy 用到的 kubeconfig 配置文件需要借助 kubectl 来生成，所以需要先安装一下 kubectl
+```
 wget https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/hyperkube -O hyperkube_1.10.1
 chmod +x hyperkube_1.10.1
 cp hyperkube_1.10.1 /usr/local/bin/hyperkube
 ln -s /usr/local/bin/hyperkube /usr/local/bin/kubectl
-admin-csr.json
+```
+
+#### 3.1.1 admin-csr.json
 
 {
   "CN": "admin",
@@ -273,7 +291,8 @@ admin-csr.json
     }
   ]
 }
-k8s-gencert.json
+
+#### 3.1.2 k8s-gencert.json
 
 {
   "signing": {
