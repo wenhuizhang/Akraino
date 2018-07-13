@@ -1,3 +1,5 @@
+
+
 # Install Suricata on Linux 
 
 1. Install dependencies 
@@ -13,7 +15,7 @@ $ sudo apt-get install wget libnetfilter-queue-dev libnetfilter-queue1 libnfnetl
 $ wget https://www.openinfosecfoundation.org/download/suricata-4.0.4.tar.gz
 $ tar -xvf suricata-4.0.4.tar.gz
 ```
-
+Note: `docker cp suricata-4.0.4.tar.gz elastic_turing:/root/`
 3. Configure 
 
 ```
