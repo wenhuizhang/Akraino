@@ -25,19 +25,19 @@ parameters:
   k8_flavor:
     type: string
     description: Type of instance (flavor) to be used
-    default: m1.large
+    default: x1.large
   k8_master:
     type: string
     description: Name of master node
-    default: secure-edge-1
+    default: iot-k8s-1
   k8_minion1:
     type: string
     description: Name of minion node 1
-    default: secure-edge-2
+    default: iot-k8s-2
   k8_minion2:
     type: string
     description: Name of minion node 2
-    default: secure-edge-3
+    default: iot-k8s-3
   k8_passwd:
     type: string
     description: Name of minion node 2
@@ -49,7 +49,7 @@ parameters:
   NetID:
     type: string
     description: External Network ID
-    default: public
+    default: public-47
 
 resources:
   node_files_init:
@@ -85,9 +85,8 @@ resources:
 
             # INSTALL DOCKER AND K8 IF THEY ARE NOT INSTALLED ALREADY.
             apt-get install -y docker.io aufs-tools  2>&1
-            # apt-get install -y kubeadm=1.9.7-00 kubelet=1.9.7-00 kubectl=1.9.7-00 kubernetes-cni --allow-downgrades  2>&1
-	    apt-get install -y kubeadm=1.11.0-00 kubelet=1.11.0-00 kubectl=1.10.2-00 kubernetes-cni=0.6.0-00 --allow-downgrades 2>&1	
-		
+            apt-get install -y kubeadm=1.9.7-00 kubelet=1.9.7-00 kubectl=1.9.7-00 kubernetes-cni --allow-downgrades  2>&1
+
             # INSTALL PYTHON AND OTHER TOOLS
             apt-get install -y python2.7-dev python-pip python-setuptools python-crypto unzip 2>&1
             pip install --upgrade pip
@@ -170,8 +169,7 @@ resources:
 
             # INSTALL DOCKER AND K8 IF THEY ARE NOT INSTALLED ALREADY.
             apt-get install -y docker.io aufs-tools  2>&1
-	    apt-get install -y kubeadm=1.11.0-00 kubelet=1.11.0-00 kubectl=1.10.2-00 kubernetes-cni=0.6.0-00 --allow-downgrades 2>&1            
-	    # apt-get install -y kubeadm=1.9.7-00 kubelet=1.9.7-00 kubectl=1.9.7-00 kubernetes-cni --allow-downgrades  2>&1
+            apt-get install -y kubeadm=1.9.7-00 kubelet=1.9.7-00 kubectl=1.9.7-00 kubernetes-cni --allow-downgrades  2>&1
 
             # INSTALL PYTHON AND OTHER TOOLS
             apt-get install -y python2.7-dev python-pip python-setuptools python-crypto unzip 2>&1
@@ -245,7 +243,9 @@ resources:
                     MASTER_IP=$(ifconfig ens3 | grep -o " inet addr:[^ ]*" | cut -f 2 -d':')
                     JOINCMD=$(grep "kubeadm join --token " setup_master.log)
                     echo "# USING JOIN CMD [$JOINCMD]"
+                    sleep 10
                     ssh root@MINION1_IP "$JOINCMD"
+                    sleep 10
                     ssh root@MINION2_IP "$JOINCMD"
 
                     echo "# INSTALL CALICO"
@@ -254,6 +254,10 @@ resources:
                     sed -i "s|192.168.0.0/16|K8CIDR|g" calico.yaml
                     kubectl apply -f rbac-kdd.yaml
                     kubectl apply -f calico.yaml
+                    sleep 10
+                    
+                    kubectl get nodes
+                    kubectl get pods --all-namespaces
 
                 params:
                     CPASSWD: { get_param: k8_passwd }
@@ -296,4 +300,3 @@ outputs:
         value: {get_attr: [ k8master, first_address ]}
         description: >
             This is the ip address of the Kubernetes master server.
-
