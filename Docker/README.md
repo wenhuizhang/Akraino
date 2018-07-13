@@ -71,3 +71,8 @@ $ docker build -t wenhuizhang/suricata:v0  .
 $ docker run -it --rm wenhuizhang/suricata:v0 bash
 ```
 
+## 6. Push Images 
+```
+$ docker login --username=wenhuizhang --email=wenhui@gwmail.gwu.edu
+$ docker push wenhuizhang/suricata
+```
