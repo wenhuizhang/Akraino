@@ -2,31 +2,22 @@
 
 ## 1. Env Setup 
 
-目前搭建仍然采用 5 台虚拟机测试，基本环境如下
-IP
-Type
-Docker
-OS
-192.168.1.61
-master、node、etcd
-18.03.0-ce
-ubuntu 16.04
-192.168.1.62
-master、node、etcd
-18.03.0-ce
-ubuntu 16.04
-192.168.1.63
-master、node、etcd
-18.03.0-ce
-ubuntu 16.04
-192.168.1.64
-node
-18.03.0-ce
-ubuntu 16.04
-192.168.1.65
-node
-18.03.0-ce
-ubuntu 16.04
+We use 5 VMs for this test. 
+```
+IP | Type | Docker | OS
+------------ | ------------- |------------ | ------------- 
+192.168.1.61 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
+
+192.168.1.62 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
+
+192.168.1.63 | master、node、etcd | 18.03.0-ce | ubuntu 16.04
+
+192.168.1.64 | node | 18.03.0-ce | ubuntu 16.04
+
+192.168.1.65 | node | 18.03.0-ce | ubuntu 16.04
+
+```
+
 搭建前请看完整篇文章后再操作，一些变更说明我放到后面了；还有为了尽可能的懒，也不用什么 rpm、deb 了，直接 hyperkube + service 配置，布吉岛 hyperkube 的请看 GitHub；本篇文章基于一些小脚本搭建(懒)，所以不会写太详细的步骤，具体请参考 仓库脚本，如果想看更详细的每一步的作用可以参考以前的 1.7、1.8 的搭建文档
 二、搭建 Etcd 集群
 
