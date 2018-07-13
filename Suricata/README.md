@@ -5,9 +5,16 @@
 ```
 $ sudo apt-get install wget libnetfilter-queue-dev libnetfilter-queue1 libnfnetlink-dev pkg-config libmagic-dev build-essential libpcre3-dev libpcre3-dbg automake autoconf libtool libpcap-dev libnet1-dev libyaml-dev zlib1g-dev libcap-ng-dev libjansson-dev
 
-$ sudo apt-get install apache2 php5 mysql-server php5-mysql
+$ sudo apt-get install apache2 
 
 ```
+Add one line to ld:
+
+`include /usr/local/lib`
+
+to `/etc/ld.so.conf`
+
+and then run `ldconfig`
 
 
 2. Download the source 
