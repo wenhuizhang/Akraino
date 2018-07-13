@@ -51,3 +51,13 @@ Expose `/var/log/suricata` from the Suricata container as `/var/log/suricata` in
 ```
 # docker volume ls -qf dangling=true | xargs -r docker volume rm
 ```
+
+## 4. Images
+
+In the case of aufs:
+
+`/var/lib/docker/aufs/diff/<id>` has the file contents of the images.
+
+`/var/lib/docker/repositories-aufs` is a JSON file containing local image information. 
+
+This can be viewed with the command docker images.
