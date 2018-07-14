@@ -173,7 +173,9 @@ Create your environment variable file.
 $ vim .akrainorc
 ```
 
-A sample `.akrainorc` file is as below:
+
+
+A sample `.akrainorc` file follows. Set TARGET_SERVER_IP to the Bare Metal Server IP. Other values may be left as-is.
 
 ```
 # /opt/akraino/.akrainorc: executed by bash(1) for env of akraino setup.
@@ -229,6 +231,19 @@ $ vi /opt/akraino/server-config/aknode42rc
 
 ```
 A sample configuration file is as below, please update the password and ips etc. etc. 
+
+
+• BUILD_WEBIP is the Build Server IP
+
+• SRV_NAME is the Bare Metal Server name
+
+• SRV_OOB_IP is the Bare Metal Server iDRAC IP
+
+• SRV_IP is the Bare Metal Server IP
+
+• Passwords are chosen for SRV_OOB_PWD and SRV_PWD
+
+• All remaining SRV_ prefixed options are adjusted as deemed appropriate
 
 ```
 # Set the ip and port to use when creating the web server
