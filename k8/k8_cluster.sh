@@ -11,9 +11,9 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" >/etc/apt/sources.li
 apt-get update 2>&1
 
 # INSTALL DOCKER AND K8 IF THEY ARE NOT INSTALLED ALREADY.
-apt-get install -y docker.io aufs-tools  2>&1
-# apt-get install -y kubeadm=1.11.0-00 kubelet=1.11.0-00 kubectl=1.10.2-00 kubernetes-cni=0.6.0-00 --allow-downgrades  2>&1
-apt-get install -y kubelet=1.8.0-00 kubectl=1.8.0-00 kubernetes-cni --allow-downgrades  2>&1
+#apt-get install -y docker.io aufs-tools  2>&1
+apt-get install -y kubeadm=1.11.0-00 kubelet=1.11.0-00 kubectl=1.10.2-00 kubernetes-cni=0.6.0-00 --allow-downgrades  2>&1
+# apt-get install -y kubelet=1.8.0-00 kubectl=1.8.0-00 kubernetes-cni --allow-downgrades  2>&1
 
 # INSTALL PYTHON AND OTHER TOOLS
 apt-get install -y python2.7-dev python-pip python-setuptools python-crypto unzip 2>&1

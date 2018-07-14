@@ -1,3 +1,7 @@
+
+
+
+
 # Install Suricata on Linux 
 
 1. Install dependencies 
@@ -13,6 +17,8 @@ $ sudo apt-get install wget libnetfilter-queue-dev libnetfilter-queue1 libnfnetl
 $ wget https://www.openinfosecfoundation.org/download/suricata-4.0.4.tar.gz
 $ tar -xvf suricata-4.0.4.tar.gz
 ```
+Note: `docker cp suricata-4.0.4.tar.gz elastic_turing:/root/`
+
 
 3. Configure 
 
@@ -34,6 +40,8 @@ The configuration of rules is located at `/etc/suricata/rules ` .
 
 The binary of suricata is located at `/usr/bin/suricata`.
 
+Previous versions might be located at `/usr/local/bin/suricata`
+
 
 5. Configuration of IDS
 
@@ -48,7 +56,7 @@ $ sudo ethtool -K eth0 gro off lro off
 Check modes available
 
 ```
-$ sudo /usr/local/bin/suricata --list-runmodes
+$ sudo /usr/bin/suricata --list-runmodes
 ```
 
 Execute
