@@ -1,20 +1,20 @@
 # QuickStart Installation Guide for Regional Node
 
-This guide helps you build and install Regional Node of Akraino Stack.
+This guide instructs how to build and install an Akraino Edge Stack (AES) Regional Controller node.
 
-There are 3 main steps involved in this installation of regional node: (1) OS installation; (2) portal installation; (3) staging files on regional node. 
+The Regional Controller Node installation includes the following 3 components: (1) OS installation; (2) portal installation; (3) staging files on regional node. 
 
 + (1) OS Install
-	1. Redfish iDRAC Bootstrapping  - Performs hardware configuration
-	2. Linux OS Installation - Installs Ubuntu
+	1. Redfish Integrated Dell Remote Access Controller (iDRAC) bootstrapping and hardware configuration
+	2. Linux OS (Ubuntu)
 
-+ (2) Portal Install
++ (2) Regional Controller
 	1. PostgreSQL DB
 	2. Camunda Workflow and Decision Engine
 	3. Akraino Web Portal
 	4. LDAP configuration 
 
-+ (3) Components staged on the Regional controller, so that they are available once a site is built:
++ (3) Supplementary Components
 	1. Tempest 
 	2. Yaml builds 
 	3. ONAP
@@ -22,6 +22,15 @@ There are 3 main steps involved in this installation of regional node: (1) OS in
 
 
 This installation will walk you through the steps of installation of a `Bare metal server` through `Build server`.
+
+```
+This installation guide refers to the following by way of an example:
+• 192.168.2.43 (aknode43): Build Server (Linux Server with a Docker Container)
+• 192.168.2.42 (aknode42): Bare Metal Server
+• 192.168.41.42: Bare Metal Server iDRAC
+Steps herein presume the use of a root account. All steps are performed from the Build Server.
+A clean, out-of-the-box Ubuntu environment is strongly recommended before proceeding.
+```
 
 #### To create a regional controller, it requires two servers:
 
@@ -32,20 +41,20 @@ This installation will walk you through the steps of installation of a `Bare met
 
 #### The Build Server, it has the following requirements:
 
-1) Ubuntu 16.04.1;
+• Any server or VM with Ubuntu Release 16.04
 
-2) Docker version 1.13.1;
+• Packages: Latest versions of sshpass, xorriso, and python-requests
 
-3) Packages of sshpass, xorriso and python-requests. 
+• Docker 1.13.1 or later
 
 
 #### The Bare Metal server has the following requirements:
 
-1) Dell PowerEdge R740 server;
-	
-2) Two interfaces to bond for the primary network connectivity;
+• Dell PowerEdge R740 server with no installed OS
 
-3) 802.1q vlan tagging on primary network interfaces.
+• Two interfaces for primary network connectivity bonding
+
+• 802.1q VLAN tagging for primary network interfaces
 
 #### The network requirements are:
 
@@ -66,53 +75,81 @@ Node 44 is a Linux Server with Container.
 ```
 
 
-## 1. Check System 
+## 1. System Check 
 
+On ***Build Server*** 
 
-### 1.1 Check OS version on Linux Server
+### 1.1 Check OS and Docker version on Linux Server
 
-Check what Operating System(OS) is on Linux Server, a `Ubuntu 16.04.1` is required.
+Ensure Ubuntu Release 16.04 (specifically) and Docker 1.13.1 (or later) are installed:
+
 ```
-$  lsb_release -sr
+# lsb_release -rs
 16.04
-```
-
-### 1.2 Check Docker version on Linux Server
-
-Check what Docker version it is, a version of `1.13.1 or higher` is required. 
-
-```
-$ docker --version
+# docker --version
 Docker version 1.13.1, build 092cba3
 ```
 
-### 1.3 Check the Packages
 
-Check what versions are there for packages of sshpass, xorriso and python-requests. 
-It requires python version of 2.7.12. 
+### 1.2 Check the Packages
+
+Ensure Python 2, specifically version 2.7.12 or later is installed. Ensure the latest versions of sshpass, xorriso, and python-requests are installed.
 
 ```
-$ sudo apt install sshpass xorriso python-requests
+# python --version
+Python 2.7.12
 
+# apt install --upgrade sshpass xorriso python-requests
 Reading package lists... Done
 Building dependency tree
 Reading state information... Done
 python-requests is already the newest version (2.9.1-3).
 sshpass is already the newest version (1.05-1).
 xorriso is already the newest version (1.4.2-4ubuntu1).
-0 upgraded, 0 newly installed, 0 to remove and 107 not upgraded.
+0 upgraded, 0 newly installed, 0 to remove and 107 not upgraded
 ```
 
-### 1.4 Check Network Setup
+### 1.3 Check Network Setup
 
-1) The Build server must have connectivity to the Bare Metal server iDRAC interface;
+1) The Build Server must have connectivity to the Bare Metal Server iDRAC interface on ports 22 (ssh) and 5900 (vnc).;
 	
-2) The Build server must have connectivity to the Bare Metal server primary network;
+2) The Bare Metal Server must be reachable from the Build Server;
 	
-3) If the Build server and the Bare Metal primary network are not on the same L2 network, 
-then a DHCP relay/helper must be setup to forward DHCP requests from the Bare Metal 
-primary network interface to the Build server.
+3) The Build Server and Bare Metal Server primary networks must have one of the following characteristics::
 
+• The networks must be located on the same L2 network, or
+
+• DHCP requests must be forwarded from the Bare Metal Server primary network interface to the Build Server (e.g., via a DHCP relay/helper).
+
+
+
+Specific steps to achieve this connectivity are beyond the scope of this guide. However, some verification can be performed.
+
+1. Verify that at least ports 22 and 5900 are open on the Bare Metal Server iDRAC interface:
+
+```
+# nmap -sS 192.168.41.42
+Starting Nmap 7.01 ( https://nmap.org ) at 2018-07-10 13:55 UTC
+Nmap scan report for 192.168.41.42
+Host is up (0.00085s latency).
+Not shown: 996 closed ports
+PORT STATE SERVICE
+22/tcp open ssh
+80/tcp open http
+443/tcp open https
+5900/tcp open vnc
+Nmap done: 1 IP address (1 host up) scanned in 1.77 seconds
+```
+
+2. Use nmap to check for a "clean slate" Bare Metal Server. The results will show the host as being down (due to no OS).
+
+```
+# nmap -sS 192.168.2.42
+Starting Nmap 7.01 ( https://nmap.org ) at 2018-07-10 13:55 UTC
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 0.63 seconds
+```
+Verification of the Build Server and Bare Metal Server primary networks is beyond the scope of this guide.
 
 
 ## 2. Setup Environment
