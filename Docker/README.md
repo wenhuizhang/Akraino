@@ -28,6 +28,7 @@ Expose `/var/log/suricata` from the Suricata container as `/var/log/suricata` in
 # docker run -it --net=host --volumes-from=suricata logstash /bin/bash
 ```
 
+
 ## 3. Stop a docker
 
 3.1 stop all containers
@@ -66,13 +67,14 @@ This can be viewed with the command docker images.
 
 ## 5. Build Images:
 ```
-$ docker build -t wenhuizhang/suricata:v0  .
+$ docker build -t wenhuizhang/suricata:v3  .
 
-$ docker run -it --rm wenhuizhang/suricata:v0 bash
+$ docker run -it --rm wenhuizhang/suricata:v3 bash
 ```
 
 ## 6. Push Images 
 ```
 $ docker login --username=wenhuizhang --email=wenhui@gwmail.gwu.edu
+$ docker commit c0d0a207c93e wenhuizhang/suricata:v3
 $ docker push wenhuizhang/suricata
 ```
