@@ -26,6 +26,8 @@ Expose `/var/log/suricata` from the Suricata container as `/var/log/suricata` in
 
 ```
 # docker run -it --net=host --volumes-from=suricata logstash /bin/bash
+
+
 ```
 
 
@@ -77,4 +79,10 @@ $ docker run -it --rm wenhuizhang/suricata:v3 bash
 $ docker login --username=wenhuizhang --email=wenhui@gwmail.gwu.edu
 $ docker commit c0d0a207c93e wenhuizhang/suricata:v3
 $ docker push wenhuizhang/suricata
+
+            docker build -f docker/Dockerfile -t edgeboot:latest .
+            docker tag edgeboot:latest edgeboot:$(VERSION)
+            docker tag edgeboot:latest mtmac5.research.att.com)/edgeboot:$(VERSION)
+            docker push mtmac5.research.att.com/edgeboot:$(VERSION)
+
 ```
