@@ -77,7 +77,29 @@ $ tail -f /var/log/suricata/eve.json
 
 7. Check Deps
 
-Check libraries in binary used for suricata in runtime. 
+7.1 Check libraries in binary used for suricata in runtime. 
+
+```
+
+# ldd  /usr/local/bin/suricata
+        linux-vdso.so.1 =>  (0x00007ffdb23ef000)
+        libhtp.so.2 => /usr/local/lib/libhtp.so.2 (0x00007f3607893000)
+        librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f360768b000)
+        libmagic.so.1 => /usr/lib/x86_64-linux-gnu/libmagic.so.1 (0x00007f360746b000)
+        libcap-ng.so.0 => /usr/lib/x86_64-linux-gnu/libcap-ng.so.0 (0x00007f3607266000)
+        libpcap.so.0.8 => /usr/lib/x86_64-linux-gnu/libpcap.so.0.8 (0x00007f3607024000)
+        libnet.so.1 => /usr/lib/x86_64-linux-gnu/libnet.so.1 (0x00007f3606e0b000)
+        libjansson.so.4 => /usr/lib/x86_64-linux-gnu/libjansson.so.4 (0x00007f3606bfe000)
+        libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007f36069e1000)
+        libyaml-0.so.2 => /usr/lib/x86_64-linux-gnu/libyaml-0.so.2 (0x00007f36067c2000)
+        libpcre.so.3 => /lib/x86_64-linux-gnu/libpcre.so.3 (0x00007f3606552000)
+        libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f3606188000)
+        libz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007f3605f6e000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007f3607ab3000)
+
+```
+
+7.2 Check files accessed for suricata in runtime
 
 ```
 $ mkdir out
@@ -90,7 +112,7 @@ $ cat log.* > merge.txt
 
 $ cat merge.txt | grep exec
 
-$ cat merge.txt | grep fork
+$ cat merge.txt | grep clone
 
 $ cat merge.txt | grep open
 ```
