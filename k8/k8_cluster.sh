@@ -21,6 +21,6 @@ pip install --upgrade pip
 
 # ADD HOSTNAME
 MYHOSTNAME=$(hostname)
-MYIP=$(ifconfig ens3f0 | grep -o " inet addr:[^ ]*" | cut -f 2 -d':')
+MYIP=$(ifconfig eno3 | grep -o " inet addr:[^ ]*" | cut -f 2 -d':')
 echo -e "\n$MYHOSTNAME $MYIP\n" >> /etc/hosts
 
