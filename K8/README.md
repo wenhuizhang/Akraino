@@ -22,6 +22,8 @@ If not, install it through apt-get.
 ```
 
 
+
+
 ### 1.2 Add K8 Sources
 
 ```
@@ -76,5 +78,51 @@ $ echo -e "\n$MYHOSTNAME $MYIP\n" >> /etc/hosts
 
 ## 2. Install Calico
 
+### 2.1 Initialize K8 Master
+Init master and configure kubectl. 
+```
+# kubeadm reset
+# kubeadm init --pod-network-cidr=192.168.0.0/16
+
+# mkdir -p $HOME/.kube
+# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+### 2.2 Install Calico
+
+Install Calico and a single node etcd.
+```
+# wget https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/kubeadm/1.7/calico.yaml
+# kubectl apply -f calico.yaml
+```
+### 2.3 Confirm 
+
+Confirm that all of the pods are running. Use ***watch*** untill all pods is "Running".
+```
+# watch kubectl get pods --all-namespaces
+```
+The result is as following, uses ***CTRL + C*** to stop.
+```
+NAMESPACE    NAME                                       READY  STATUS   RESTARTS  AGE
+kube-system  calico-etcd-x2482                          1/1    Running  0         2m
+kube-system  calico-kube-controllers-6ff88bf6d4-tgtzb   1/1    Running  0         2m
+kube-system  calico-node-24h85                          2/2    Running  0         2m
+kube-system  etcd-jbaker-virtualbox                     1/1    Running  0         6m
+kube-system  kube-apiserver-jbaker-virtualbox           1/1    Running  0         6m
+kube-system  kube-controller-manager-jbaker-virtualbox  1/1    Running  0         6m
+kube-system  kube-dns-545bc4bfd4-67qqp                  3/3    Running  0         5m
+kube-system  kube-proxy-8fzp2                           1/1    Running  0         5m
+kube-system  kube-scheduler-jbaker-virtualbox           1/1    Running  0         5m
+```
+### 2.4 Remove Taints 
+Remove the taints on master node so that you can schedule pods on it.
+```
+# kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+Confirm that you now have a node in your cluster.
+```
+# kubectl get nodes -o wide
+```
 
 ## 3. Build Cluster
