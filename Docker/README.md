@@ -34,6 +34,12 @@ Expose `/var/log/suricata` from the Suricata container as `/var/log/suricata` in
 
 ## 3. Stop a docker
 
+Sometimes you need to stop k8.
+
+```
+# kubeadm reset
+```
+
 3.1 stop all containers
 
 ```
