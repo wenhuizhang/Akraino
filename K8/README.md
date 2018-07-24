@@ -1,4 +1,5 @@
 
+
 # Kubenetes with Calico CNI
 
 ## 1. Install Kubenetes
@@ -62,6 +63,7 @@ $ echo -e "\n$MYHOSTNAME $MYIP\n" >> /etc/hosts
 ### 1.7 Cache clean
 ```
 # apt-get clean
+# hash -l
 ```
 
 ## 2. Install Calico
