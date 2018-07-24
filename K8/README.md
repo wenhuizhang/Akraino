@@ -21,6 +21,7 @@ If not, install it through apt-get.
 # apt-get install -y ntp 
 ```
 
+
 ### 1.2 Add K8 Sources
 
 ```
@@ -60,11 +61,18 @@ $ echo -e "\n$MYHOSTNAME $MYIP\n" >> /etc/hosts
 # kubeadm version
 # kubectl --version
 ```
-### 1.7 Cache clean
+### 1.7 Start K8
+```
+# kubeadm reset
+# kubeadm init
+```
+
+### 1.8 Cache clean
 ```
 # apt-get clean
 # hash -l
 ```
+
 
 ## 2. Install Calico
 
