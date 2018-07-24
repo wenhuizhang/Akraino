@@ -67,7 +67,7 @@ $ echo -e "\n$MYHOSTNAME $MYIP\n" >> /etc/hosts
 # kubeadm init
 ```
 
-### 1.8 Cache clean
+### 1.8 Cache Clean
 ```
 # apt-get clean
 # hash -l
