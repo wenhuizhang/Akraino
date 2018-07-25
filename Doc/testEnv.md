@@ -22,6 +22,7 @@ Usage: vagrant [options] <command> [<args>]
 Common commands:
      box             manages boxes: installation, removal, etc.
 
+
 destroy         stops and deletes all traces of the vagrant machine
      global-status   outputs status Vagrant environments for this user
      halt            stops the vagrant machine
@@ -57,6 +58,8 @@ To remove vagrant:
 # rm -rf .vagrant.d 
 # rm -rf /opt/vagrant
 # rm -f /usr/bin/vagrant
+# apt-get remove vagrant
+# apt-get clean
 ```
 
 ## 3. Setup VM
