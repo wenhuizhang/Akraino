@@ -1,4 +1,4 @@
-# Installation of Test Environment
+# Installation of Vagrant VM
 
 Setup for test environment of Suricata Test.
 
@@ -78,6 +78,6 @@ Vagrant.configure('2') do |config|
 end
 ```
 
-## 4. Setup Network for VM
+## P.S.
 
-## 5. Softwares in VM
+It seems like virtualbox and vagrants' version has some conflicts...
