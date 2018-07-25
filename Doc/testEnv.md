@@ -53,8 +53,20 @@ or not commonly used. To see all subcommands, run the command
 
 ## 3. Setup VM
 ```
-# 
+# vagrant init ubuntu/xenial64
+# vagrant up
+# vagrant halt
 ```
+Setup disk size with VM.
+
+For the ***Vagrantfile***
+```
+Vagrant.configure('2') do |config|
+   config.vm.box = 'ubuntu/xenial64'
+   config.disksize.size = '50GB'
+end
+```
+
 ## 4. Setup Network for VM
 
 ## 5. Softwares in VM
