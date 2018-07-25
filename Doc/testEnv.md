@@ -21,7 +21,8 @@ Usage: vagrant [options] <command> [<args>]
 
 Common commands:
      box             manages boxes: installation, removal, etc.
-     destroy         stops and deletes all traces of the vagrant machine
+
+destroy         stops and deletes all traces of the vagrant machine
      global-status   outputs status Vagrant environments for this user
      halt            stops the vagrant machine
      help            shows the help for a subcommand
@@ -49,6 +50,13 @@ For help on any individual command run `vagrant COMMAND -h`
 Additional subcommands are available, but are either more advanced
 or not commonly used. To see all subcommands, run the command
 `vagrant list-commands`.
+```
+
+To remove vagrant:
+```
+# rm -rf .vagrant.d 
+# rm -rf /opt/vagrant
+# rm -f /usr/bin/vagrant
 ```
 
 ## 3. Setup VM
