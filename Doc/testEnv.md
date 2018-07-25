@@ -1,6 +1,6 @@
 # Installation of Test Environment
 
-Setup for test environment of 
+Setup for test environment of Suricata Test.
 
 ## 1. Install Virtualbox
 ```
