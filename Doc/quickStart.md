@@ -1,4 +1,4 @@
-# Quick Start
+ # Quick Start Guide (3)
 
 There are three main components in this project: 
 
