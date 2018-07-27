@@ -1,5 +1,11 @@
 # Add Disk
 
+
+1. delete the old partitions that remain on the disk;
+
+2. create the new partition.
+
+
 ## 1. Check Status 
 ```
 # df -h
@@ -70,6 +76,7 @@ The check with `fdisk -l`.
 ## 4. Format the Partition
 
 ```
+# umount -l /dev/sdb1
 # mkfs.ext4 /dev/sdb1
 ```
 
