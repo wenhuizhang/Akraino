@@ -94,7 +94,7 @@ $ uvt-kvm create vm1 \
 Login to the vm named vm1.
 
 ```
-$ uvt-kvm ssh vm1
+$ uvt-kvm ssh test --insecure
 ```
 
 Use the regular ssh command client:
