@@ -132,6 +132,8 @@ $ virsh list
 
 ## 9.Delete VM
 
+### 9.1 Through `uvt-kvm`
+
 To destroy/delete your VM named vm1, run:
 
 ```
@@ -144,12 +146,95 @@ To find out the IP address of the vm1, run:
 $ uvt-kvm ip vm1
 ```
 
+### 9.2 Through `virsh`
+
+9.2.1. List all a VM guests
+
+```
+# virsh list
+```
+
+9.2.2. To see info about domain called openbsd, enter:
+
+```
+# virsh dumpxml VM_NAME
+# virsh dumpxml --domain VM_NAME
+# virsh dumpxml --domain openbsd
+```
+Down a guest’s storage files
+`# virsh dumpxml --domain openbsd | grep 'source file'`
+
+
+9.2.3. Shutdown the guest
+
+Type the following command to shutdown the vm called openbsd:
+
+```
+# virsh shutdown VM_NAME
+# virsh shutdown --domain VM_NAME
+# virsh shutdown --domain openbsd
+```
+You can force a guest virtual machine to stop with the virsh destroy command:
+
+```
+# virsh destroy VM_NAME
+# virsh destroy --domain VM_NAME
+# virsh destroy --domain openbsd
+```
+
+
+9.2.4. List snapshots, enter:
+
+```
+# virsh snapshot-list --domain VM_NAME
+# virsh snapshot-list --domain openbsd
+```
+Sample outputs:
+
+```
+ Name                 Creation Time             State
+------------------------------------------------------------
+ 3sep2016             2016-09-02 13:38:18 -0500 shutoff
+ 3sep2016u1           2016-09-02 15:04:50 -0500 shutoff
+```
+
+9.2.5. Delete snapshot:
+
+```
+# virsh snapshot-delete --domain VM_NAME --snapshotname SNAPSHOT_NAME
+# virsh snapshot-delete --domain openbsd --snapshotname 3sep2016 
+# virsh snapshot-delete --domain openbsd --snapshotname 3sep2016u1 
+```
+
+9.2.6 Verify it:
+
+```
+# virsh snapshot-list --domain openbsd
+```
+
+9.2.7. Undefine a VM
+
+```
+# virsh undefine VM_NAME
+# virsh undefine --domain VM_NAME
+# virsh undefine --domain openbsd
+```
+
+9.2.8. Delete the attached storage file called /nfswheel/kvm/openbsd.qcow2.
+
+```
+# rm -rf /nfswheel/kvm/openbsd.qcow2
+```
+
+
 ### P.S. Network Issues
 
 When meet some network issues, pn the iDRAC
+
 ```
 > console com2
 ```
+
 And check if routing is working fine.
 
 ```
