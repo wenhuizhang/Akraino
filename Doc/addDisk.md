@@ -1,3 +1,4 @@
+
 # Add Disk
 
 
@@ -10,6 +11,7 @@
 ```
 # df -h
 # fdisk -l
+# partprobe
 ```
 
 ## 2. Usage of Fdisk
@@ -71,6 +73,7 @@ Command (m for help): w                     //write and save, enter
 ```
 
 The check with `fdisk -l`.
+If does not work, use `partprobe`.
 
 
 ## 4. Format the Partition
