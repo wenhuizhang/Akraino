@@ -1,5 +1,10 @@
 # Network for Test Env (KVM)
 
+On the iDRAC
+```
+> console com2
+```
+
 ```
 root@pocnjrsv160:/home/wenhui# netstat -rn
 root@pocnjrsv160:/home/wenhui# route add -net default gw 135.25.28.50
