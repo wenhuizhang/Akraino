@@ -1,4 +1,4 @@
-# Installation of KVM
+# Basics of KVM
 
 ## 1. Install KVM
 ```
