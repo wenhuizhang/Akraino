@@ -1,4 +1,27 @@
+
 # Pcap Overview
+
+## 0.Unzip
+
+## 0.1 pcap.xz Format
+
+Install xz-utils package first:
+
+```
+$ sudo apt-get install xz-utils
+```
+
+Use unxz command to extract .xz files:
+
+```
+$ unxz file.xz
+```
+
+Using with --decompress option of xz:
+
+```
+$ xz --decompress file.xz
+```
 
 ## 1. Tcpdump 
 
@@ -42,6 +65,23 @@ reading from file botnet-capture-20110810-neris.pcap, link-type EN10MB (Ethernet
 ### 1.3. Show pcakets in tcpick
 ```
 $ tcpick -C -yP -r botnet-capture-20110810-neris.pcap
+
+Starting tcpick 0.2.1 at 2018-07-30 15:32 UTC
+Timeout for connections is 600
+tcpick: reading from botnet-capture-20110810-neris.pcap
+..)......... FDEBFCFFENEBEOCACACACACACACACAAA.. ..... ........... T.
+..)......... FDEBFCFFENEBEOCACACACACACACACAAA.. ..... ........... T.
+..)......... FDEBFCFFENEBEOCACACACACACACACAAA.. ..... ........... T.
+..)......... FDEBFCFFENEBEOCACACACACACACACAAA.. ..... ........... T.
+oL...........wpad.....
+oL...........wpad.....
+oL...........wpad............
+..@.a.root-servers.net..nstld.verisign-grs.com.w............    :...Q.
+............ FHFAEBEECOCACACACACACACACACACAAA.. ..
+............ FHFAEBEECOCACACACACACACACACACAAA.. ..
+..)......... FDEBFCFFENEBEOCACACACACACACACAAA.. ..... ........... T.
+..)......... FDEBFCFFENEBEOCACACACACACACACAAA.. ..... ........... T.
+
 ```
 
 
