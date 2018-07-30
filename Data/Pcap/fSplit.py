@@ -9,34 +9,29 @@ import sys
 
 
 
-# get present working directory location as default
-location = os.getcwd() 
-#keep a count of all files found
-counter = 0 
-#keep a count of pcap files found
-pcapcounter = 0 
-#keep a count of non pcap  files found
-nonpcapcounter = 0 
-#list to store all pcap files found at location
-pcapfiles = []
-#list to keep any other file that do not match the criteria
-otherfiles = [] 
+# get filename to be splited 
+filename = "" 
+#keep a count of pcap files to be split
+splitcounter = 1 
+#list of out files 
+files = [] 
 
 
 
 
 # if input arguments are wrong, print out usage
 
-if len(sys.argv) != 2:
-    print >> sys.stderr, "usage: python {0} folder\n".format(sys.argv[0])
+if len(sys.argv) != 3:
+    print >> sys.stderr, "usage: python {0} file counter\n".format(sys.argv[0])
 
     sys.exit(1)
 
-location = sys.argv[1]
+filename = sys.argv[1]
+splitcounter = sys.argv[2] 
 
 
 print "................................................................"
-print "Analyzing files in" , location
+print "Spliting file " , filename, "into", splitcounter
 print "................................................................"
 
 
