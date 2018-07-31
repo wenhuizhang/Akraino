@@ -27,7 +27,7 @@ if len(sys.argv) != 3:
     sys.exit(1)
 
 filename = sys.argv[1]
-splitcounter = sys.argv[2] 
+size = sys.argv[2] 
 
 
 print "................................................................"

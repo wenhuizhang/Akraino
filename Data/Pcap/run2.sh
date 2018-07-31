@@ -13,7 +13,7 @@ run() {
     done
 }
 
-export num=500
+export num=100
 export cmd="/usr/local/bin/suricata -c /etc/suricata/suricata.yaml -r ./out.pcap2"
 
 run $num $cmd
