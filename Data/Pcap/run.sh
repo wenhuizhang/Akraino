@@ -13,7 +13,7 @@ run() {
     done
 }
 
-export num=100
+export num=500
 export cmd="/usr/local/bin/suricata -c /etc/suricata/suricata.yaml -r ./botnet-capture-20110810-neris.pcap"
 
 run $num $cmd
