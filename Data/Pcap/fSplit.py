@@ -30,13 +30,28 @@ filename = sys.argv[1]
 size = sys.argv[2] 
 
 
+
 print "................................................................"
-print "Spliting file " , filename, "into", size
+print "Cleaning Environment"
+print "................................................................"
+
+
+cmd = "rm out.pcap*"
+os.system(cmd)
+
+
+
+print "................................................................"
+print "Spliting File " , filename, "into", size
 print "................................................................"
 
 
 
 cmd = "tcpdump -r " + filename +  " -w " + "out.pcap -C " + size
+
+os.system(cmd)
+
+cmd = "mv ./out.pcap ./out.pcap0"
 
 os.system(cmd)
 
