@@ -65,7 +65,7 @@ $ sudo /usr/local/bin/suricata --list-runmodes
 Execute
 
 ```
-$ docker run -v /home/wenhui/:/home -it wenhuizhang/suricata:v4
+$  docker run --privileged -v /home/wenhui/:/home -it wenhuizhang/suricata:v4
 $ sudo /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
 ```
 
