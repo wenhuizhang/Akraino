@@ -19,6 +19,7 @@ and then run `ldconfig`
 
 2. Download the source 
 
+
 ```
 $ wget https://www.openinfosecfoundation.org/download/suricata-4.0.4.tar.gz
 $ tar -xvf suricata-4.0.4.tar.gz
@@ -64,6 +65,7 @@ $ sudo /usr/local/bin/suricata --list-runmodes
 Execute
 
 ```
+$ docker run -v /home/wenhui/:/home -it wenhuizhang/suricata:v4
 $ sudo /usr/local/bin/suricata -c /etc/suricata/suricata.yaml -i eth0 --init-errors-fatal
 ```
 
