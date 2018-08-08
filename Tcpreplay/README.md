@@ -32,7 +32,7 @@ $ ./configure --help
 If kernel sources were prepared for out of tree compilation, additional parameters will be necessary:
 
 ```
-$ ./configure --kernel-dir=/a/b/c/linux-A.B.C/
+$ ./configure --kernel-dir=/directory-to-linux-src/linux-A.B.C/
 ```
 
 ### 1.3. Compilation
@@ -73,7 +73,38 @@ We can verify that modules are loaded with `lsmod`.
 Testing through ***pkt-gen*** application:
 
 ```
-$ ./build-apps/pkt-gen -i eth0 -f tx -l 60
+$ ./build-apps/pkt-gen -i docker0 -f tx -l 60
+```
+
+
+### 1.6. PHY NIC 
+A formal procedure to test our own modules, if don’t want to to through veth.
+
+#### 1.6.1. unload any modules for the network cards you want to use, 
+
+```
+$ sudo rmmod ixgbe 
+$ sudo rmmod e1000 
+```
+
+#### 1.6.2. load netmap and device driver module 
+
+```
+$ sudo insmod ./netmap.ko 
+$ sudo insmod ./ixgbe/ixgbe.ko 
+$ sudo insmod ./e1000/e1000.ko 
+```
+
+#### 1.6.3. turn the interface(s) up 
+
+```
+$ sudo ifconfig eth0 up 
+```
+
+#### 1.6.4. Run test 
+
+```
+$ sudo pkt-gen -i docker0 -f tx -n 500111222 -l 60 -w 5 
 ```
 
 ## 2. Install Tcpreplay
@@ -111,7 +142,7 @@ Extracted netmap into `/usr/src/` or `/usr/local/src` to avoid extra configure o
 Otherwise, specify the netmap source directory, for example:
 
 ```
-$ ./configure --with-netmap=/home/fklassen/git/netmap
+$ ./configure --with-netmap=/home/wenhui/netmap
 $ make
 $ sudo make install
 ```
@@ -128,13 +159,17 @@ Some of the more interesting ones are:
 –with-netmap – specify root path to netmap
 –with-tcpdump – specify path to tcpdump executable
 –enable-tcpreplay-edit – compile tcpreplay with packet editing support
+```
 You can also manually select a particular method to inject packets:
+```
 –enable-force-pf – force tcpreplay to use Linux’s PF_PACKET to send packets
 –enable-force-bpf – force tcpreplay to use Free/Net?/OpenBSD or OS X’s BPF interface to send packets
 –enable-force-libnet – force tcpreplay to use Libnet to send packets
 –enable-force-inject – force tcpreplay to use Libpcap’s pcap_inject() API to send packets
 –enable-force-sendpacket – force tcpreplay to use Libpcap’s pcap_sendpacket() API to send packets
+```
 If you’re having compatibility issues with a system-installed GNU Autogen, you may want to consider these options:
+```
 –disable-local-libopts – Don’t use the libopts tearoff supplied with tcpreplay (default is enabled)
 –disable-libopts-install – don’t install the libopts library files
 ```
