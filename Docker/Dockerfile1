@@ -30,7 +30,7 @@ RUN export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/us
 
 # build deps
 RUN apt-get install -y wget tar libnetfilter-queue-dev libnetfilter-queue1 libnfnetlink-dev pkg-config libmagic-dev build-essential libpcre3-dev libpcre3-dbg automake autoconf libtool libpcap-dev libnet1-dev libyaml-dev zlib1g-dev libcap-ng-dev libjansson-dev apache2 
-
+RUN apt-get install ethtool libhtp-dev 
 
 # download source 
 # RUN cp /root/suricata/suricata-4.0.4.tar.gz ./
