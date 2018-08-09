@@ -59,6 +59,7 @@ $ sudo ethtool -K eth0 gro off lro off
 Check modes available
 
 ```
+$ sudo ldconfig
 $ sudo /usr/local/bin/suricata --list-runmodes
 ```
 
