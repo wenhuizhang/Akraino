@@ -1,4 +1,4 @@
-#!/bin/bash
+docker build  docker#!/bin/bash
 #
 # Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
 #
@@ -25,9 +25,9 @@ CON_NAME='akraino_container_probe'
 source $WORKSPACE/version.properties
 
 ## Put any special build instructions here
+docker build docker -t ${CON_NAME}:${VERSION}
 
 # Build and push the Docker container
-docker build -f Dockerfile -t ${CON_NAME}:${VERSION} .
 docker tag ${CON_NAME}:${VERSION} ${DOCKER_REPO}/${CON_NAME}:${VERSION}
 docker push ${DOCKER_REPO}/${CON_NAME}:${VERSION}
 
