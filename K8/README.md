@@ -61,7 +61,7 @@ $ echo -e "\n$MYHOSTNAME $MYIP\n" >> /etc/hosts
 ```
 # kubelet --version
 # kubeadm version
-# kubectl --version
+# kubectl version
 ```
 ### 1.7 Start K8
 ```
