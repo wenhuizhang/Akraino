@@ -93,7 +93,7 @@ $ docker push wenhuizhang/suricata
 $ docker build -f docker/Dockerfile -t edgeboot:latest .
 $ docker tag edgeboot:latest edgeboot:$(VERSION)
             
-$ docker tag edgeboot:latest mtmac5.research.att.com)/edgeboot:$(VERSION)
+$ docker tag edgeboot:latest mtmac5.research.att.com/edgeboot:$(VERSION)
 $ docker push mtmac5.research.att.com/edgeboot:$(VERSION)
 ```
 
